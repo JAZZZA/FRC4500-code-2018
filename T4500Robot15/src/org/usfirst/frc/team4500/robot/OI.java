@@ -21,17 +21,15 @@ public class OI {
 	Joystick drivestick = new Joystick(1);
 	
 	public double getX() {
-		return drivestick.getX();
+		return Math.abs(drivestick.getX()) > RobotMap.joyDead ? drivestick.getX() : 0;
 	}
 	
 	public double getY() {
-		return drivestick.getY();		
+		return Math.abs(drivestick.getY()) > RobotMap.joyDead ? drivestick.getY() : 0;		
 	}
 	
 	public double getTwist() {
-		return drivestick.getTwist();
+		return Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
 	}
-
-
 }
 

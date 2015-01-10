@@ -31,5 +31,9 @@ public class OI {
 	public double getTwist() {
 		return Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
 	}
+	
+	public boolean getTrigger() {
+		return drivestick.getRawButton(1);
+	}
 }
-
+    

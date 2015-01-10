@@ -14,10 +14,17 @@ public class RobotMap {
 	blmotorPort = 3,
 	brmotorPort = 4;
 	
+	
 	//Joystick deadzone values
 	public static double joyDead = 1; //<-- Dummy value
+
+
+	public static final int openDemo = 0;
+
+
+	public static final int closeDemo = 1;
 	
-    
+    public static final int pneumaticsPort = 0;
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;

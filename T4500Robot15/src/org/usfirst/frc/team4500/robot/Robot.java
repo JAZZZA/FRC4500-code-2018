@@ -1,15 +1,15 @@
 
 package org.usfirst.frc.team4500.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.RobotDrive.MotorType;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team4500.robot.subsystems.Pneumatics;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +25,7 @@ public class Robot extends IterativeRobot {
 
     Command autonomousCommand;
     public static Drivetrain drivetrain;
+    public static Pneumatics pneumatics;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -35,6 +36,7 @@ public class Robot extends IterativeRobot {
 		
 		drivetrain = new Drivetrain();
 		drivetrain.invertDriveMotors();
+		pneumatics = new Pneumatics();
 		
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();

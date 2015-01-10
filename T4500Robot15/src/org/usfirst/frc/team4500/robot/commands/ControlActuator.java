@@ -7,19 +7,28 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveWithJoystick extends Command {
-	public DriveWithJoystick() {
-		requires(Robot.drivetrain);
+public class ControlActuator extends Command {
+
+    public ControlActuator() {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
     }
 
-    // Called repeatedly when this Command is scheduled to run
+    // Called repeatedly when this Command is scheduled to run	
     protected void execute() {
-    	Robot.drivetrain.driveWithJoystick(Robot.oi.getX(),Robot.oi.getY(),Robot.oi.getTwist());
-    	
+    	if (Robot.oi.getTrigger())
+    	{
+    		Robot.pneumatics.openDemo(true);
+    		Robot.pneumatics.closeDemo(false);
+    	} else {
+    		Robot.pneumatics.openDemo(false);
+    		Robot.pneumatics.closeDemo(true);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

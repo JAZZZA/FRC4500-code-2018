@@ -1,9 +1,10 @@
 package org.usfirst.frc.team4500.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
+import org.usfirst.frc.team4500.robot.commands.ControlActuator;
 
-import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.Trigger;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,21 +20,28 @@ public class OI {
     
    
 	Joystick drivestick = new Joystick(1);
+	Trigger mainTrigger = new JoystickButton(drivestick, 1);
 	
+	public OI() {
+		mainTrigger.whenActive(new ControlActuator());
+	}
+	
+	//Made the joystick always return 0 for now so we can test the pneumatics
 	public double getX() {
-		return Math.abs(drivestick.getX()) > RobotMap.joyDead ? drivestick.getX() : 0;
+		return 0;//Math.abs(drivestick.getX()) > RobotMap.joyDead ? drivestick.getX() : 0;
 	}
 	
 	public double getY() {
-		return Math.abs(drivestick.getY()) > RobotMap.joyDead ? drivestick.getY() : 0;		
+		return 0;//Math.abs(drivestick.getY()) > RobotMap.joyDead ? drivestick.getY() : 0;		
 	}
 	
 	public double getTwist() {
-		return Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
+		return 0;//Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
 	}
 	
 	public boolean getTrigger() {
 		return drivestick.getRawButton(1);
 	}
+	
 }
     

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4500.robot.commands;
 
 import org.usfirst.frc.team4500.robot.Robot;
+import org.usfirst.frc.team4500.robot.subsystems.PneumaticsDemo;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -10,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ControlActuator extends Command {
 
     public ControlActuator() {
+    	requires(Robot.pneumaticsDemo);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,19 +23,12 @@ public class ControlActuator extends Command {
 
     // Called repeatedly when this Command is scheduled to run	
     protected void execute() {
-    	if (Robot.oi.getTrigger())
-    	{
-    		Robot.pneumatics.openDemo(true);
-    		Robot.pneumatics.closeDemo(false);
-    	} else {
-    		Robot.pneumatics.openDemo(false);
-    		Robot.pneumatics.closeDemo(true);
-    	}
+    	Robot.pneumaticsDemo.toggleDemo();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true; //Makes it run only one iteration I think
     }
 
     // Called once after isFinished returns true

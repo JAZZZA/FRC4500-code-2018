@@ -4,7 +4,7 @@ package org.usfirst.frc.team4500.robot;
 import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
-import org.usfirst.frc.team4500.robot.subsystems.PneumaticsDemo;
+import org.usfirst.frc.team4500.robot.subsystems.PneumaticsMain;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -25,7 +25,7 @@ public class Robot extends IterativeRobot {
 
     Command autonomousCommand;
     public static Drivetrain drivetrain;
-    public static PneumaticsDemo pneumaticsDemo;
+    public static PneumaticsMain pneumaticsDemo;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -36,7 +36,7 @@ public class Robot extends IterativeRobot {
 		
 		drivetrain = new Drivetrain();
 		drivetrain.invertDriveMotors();
-		pneumaticsDemo = new PneumaticsDemo();
+		pneumaticsDemo = new PneumaticsMain();
 		
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();

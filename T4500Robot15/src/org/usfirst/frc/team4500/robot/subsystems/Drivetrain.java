@@ -25,6 +25,10 @@ public class Drivetrain extends Subsystem {
 		drive.mecanumDrive_Cartesian(x, y, rotation, 0);
 	}
 	
+	public void driveBack() {
+		drive.mecanumDrive_Cartesian(0,-1,0,0);
+	}
+	
 	public void invertDriveMotors(){
 		drive.setInvertedMotor(MotorType.kFrontRight, true);
 		drive.setInvertedMotor(MotorType.kRearRight, true);
@@ -33,5 +37,10 @@ public class Drivetrain extends Subsystem {
     public void initDefaultCommand() {
     	setDefaultCommand (new DriveWithJoystick());
     }
+
+	public void stop() {
+		drive.mecanumDrive_Cartesian(0,0,0,0);
+		
+	}
 }
 

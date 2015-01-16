@@ -30,7 +30,7 @@ public class Drivetrain extends Subsystem {
 	}
 	
 	public void invertDriveMotors(){
-		drive.setInvertedMotor(MotorType.kFrontRight, true);
+		drive.setInvertedMotor(MotorType.kFrontRight, true);    
 		drive.setInvertedMotor(MotorType.kRearRight, true);
 	}
 	

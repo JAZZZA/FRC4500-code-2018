@@ -19,8 +19,15 @@ public class RobotMap {
 	clawWinch = 4,
 	clawBMotor = 5; 
 	
+	//Solenoids
+	public static int
+	topClawOne1 = 0,//Dummy
+	topClawOne2 = 1,//Dummy
+	topClawTwo1 = 2,//Dummy
+	topClawTwo2 = 3;//Dummy
+	
 	//Joystick deadzone values
-	public static double joyDead = 1; //Dummy value
+	public static double joyDead = .1; //Dummy value
 	
     public static final int pneumaticsModule = 0;
     
@@ -29,5 +36,7 @@ public class RobotMap {
 	
 	public static final double winchTolerance = 1; //Dummy value
 	public static double winchSetpoint = 1; //Dummy value
+
+	public static double motorPower = 0.5;
 	
 }

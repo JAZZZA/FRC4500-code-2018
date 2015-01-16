@@ -1,10 +1,10 @@
 
 package org.usfirst.frc.team4500.robot;
 
-import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
+
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsMain;
+import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -20,12 +20,13 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 
     Command autonomousCommand;
     public static Drivetrain drivetrain;
     public static PneumaticsMain pneumaticsDemo;
+    public static TopClaw topClaw;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -34,12 +35,13 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
 		
+		topClaw = new TopClaw();
 		drivetrain = new Drivetrain();
 		drivetrain.invertDriveMotors();
 		pneumaticsDemo = new PneumaticsMain();
 		
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
+        //autonomousCommand = new ExampleCommand();
     }
 	
 	public void disabledPeriodic() {

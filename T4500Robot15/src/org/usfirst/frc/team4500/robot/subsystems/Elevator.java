@@ -7,16 +7,17 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 /**
  *
  */
-public class Winch extends PIDSubsystem {
+public class Elevator extends PIDSubsystem {
 
 	static double 
 	kp = 0, 
 	ki = 0,
 	kd = 0;
+	
+	
 
     // Initialize your subsystem here
-    public Winch() {
-
+    public Elevator() {
     	super("Winch", kp, ki, kd);
         // Use these to get going:
         setSetpoint(RobotMap.winchSetpoint); //Sets where the PID controller should move the system

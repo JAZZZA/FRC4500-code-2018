@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -29,15 +30,19 @@ public class OI {
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics
 	public double getX() {
-		return 0;//Math.abs(drivestick.getX()) > RobotMap.joyDead ? drivestick.getX() : 0;
+		double x = Math.abs(drivestick.getX()) > RobotMap.joyDead ? drivestick.getX() : 0;
+		SmartDashboard.putNumber("x", x);
+		return RobotMap.motorPower*x;
 	}
 	
 	public double getY() {
-		return 0;//Math.abs(drivestick.getY()) > RobotMap.joyDead ? drivestick.getY() : 0;		
+		double x = Math.abs(drivestick.getY()) > RobotMap.joyDead ? drivestick.getY() : 0;		
+		return RobotMap.motorPower*x;
 	}
 	
 	public double getTwist() {
-		return 0;//Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
+		double x = Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
+		return RobotMap.motorPower*x;
 	}
 	
 	public boolean getTrigger() {

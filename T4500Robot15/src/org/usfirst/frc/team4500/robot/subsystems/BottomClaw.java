@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class FrontClaw extends Subsystem {
+public class BottomClaw extends Subsystem {
     
 	
 	Talon winch = new Talon(RobotMap.clawWinch);

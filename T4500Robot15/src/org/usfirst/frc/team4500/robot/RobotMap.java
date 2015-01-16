@@ -8,15 +8,18 @@ package org.usfirst.frc.team4500.robot;
 public class RobotMap {
 	
 	//Motor Ports
+	public static double
+	motorPower = .5;
+	
 	public static int
-	flmotorPort = 1,
-	frmotorPort = 2,
-	blmotorPort = 3,
-	brmotorPort = 4;
+	flmotorPort = 0,
+	frmotorPort = 1,
+	blmotorPort = 2,
+	brmotorPort = 3;
 	
 	
 	//Joystick deadzone values
-	public static double joyDead = 1; //<-- Dummy value
+	public static double joyDead = .01; //<-- Dummy value
 
 
 	public static final int openDemo = 0;

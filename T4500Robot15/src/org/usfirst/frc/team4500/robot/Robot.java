@@ -32,7 +32,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
+		
 		
 		drivetrain = new Drivetrain();
 		drivetrain.invertDriveMotors();
@@ -40,6 +40,8 @@ public class Robot extends IterativeRobot {
 		
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
+        
+        oi = new OI();
     }
 	
 	public void disabledPeriodic() {

@@ -1,8 +1,13 @@
 package org.usfirst.frc.team4500.robot;
 
+
 import org.usfirst.frc.team4500.robot.commands.ControlActuator;
+import org.usfirst.frc.team4500.robot.commands.FullBackward;
+import org.usfirst.frc.team4500.robot.commands.FullForward;
+import org.usfirst.frc.team4500.robot.commands.ResetGyro;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -22,10 +27,13 @@ public class OI {
    
 	Joystick drivestick = new Joystick(0);
 	Trigger mainTrigger = new JoystickButton(drivestick, 1);
+	Button backwardButton = new JoystickButton(drivestick, 3);
+	Button forwardButton = new JoystickButton(drivestick, 4);
 	
 	public OI() {
-		mainTrigger.whenActive(new ControlActuator());
-		
+		mainTrigger.whenActive(new ResetGyro());
+		backwardButton.whileHeld(new FullBackward());
+		forwardButton.whileHeld(new FullForward());
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics

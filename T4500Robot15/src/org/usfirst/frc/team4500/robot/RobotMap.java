@@ -9,7 +9,7 @@ public class RobotMap {
 	
 	//Motor Ports
 	public static double
-	motorPower = .5;
+	motorPower = 1;
 	
 	public static int
 	flmotorPort = 0,

@@ -2,6 +2,7 @@
 package org.usfirst.frc.team4500.robot;
 
 
+import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsMain;
 import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
@@ -27,6 +28,7 @@ public class Robot extends IterativeRobot {
     public static Drivetrain drivetrain;
     public static PneumaticsMain pneumaticsDemo;
     public static TopClaw topClaw;
+    public static BottomClaw bottomClaw;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -35,6 +37,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
 		
+		bottomClaw = new BottomClaw();
 		topClaw = new TopClaw();
 		drivetrain = new Drivetrain();
 		drivetrain.invertDriveMotors();

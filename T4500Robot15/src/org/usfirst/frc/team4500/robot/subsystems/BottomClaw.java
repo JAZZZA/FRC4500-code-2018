@@ -2,7 +2,8 @@ package org.usfirst.frc.team4500.robot.subsystems;
 
 import org.usfirst.frc.team4500.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -10,34 +11,32 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class BottomClaw extends Subsystem {
     
+	Relay winch = new Relay(RobotMap.clawWinch);
+	Encoder screwEncoder = new Encoder(RobotMap.screwDriveEncoder1, RobotMap.screwDriveEncoder2);
 	
-	Talon winch = new Talon(RobotMap.clawWinch);
-	private int speedWinch = 1;
-	//Some Kind of sensor set in here!!!
-	
+	//int initialEncode = screwEncoder.get();
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void pickUp() {
-    	
-    	//while sensor =! is at a certain point
-    	winch.set(speedWinch);
+    public void closeClaw() {
+    	while(screwEncoder.get() <= RobotMap.bottomClawClosed) {
+        	winch.set(Relay.Value.kForward);
+    	}
+    }
+    
+    public void openClaw() {
+    	while(screwEncoder.get() >= RobotMap.bottomClawOpen) {
+        	winch.set(Relay.Value.kReverse);
+    	}
     }
 
-	private void backAway() {
+	/*private void backAway() {
 		
-		//Make this do shit
+		//What exactly do we need to back away for again?
 		
-	}
-	
-	public void winchControl(int speed) {
-		winch.set(speed);
-	}
-	
-	
-	
+	}*/	
 }
 

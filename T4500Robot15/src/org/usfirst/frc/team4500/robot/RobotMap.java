@@ -29,6 +29,15 @@ public class RobotMap {
 	topClawTwo1 = 2,//Dummy
 	topClawTwo2 = 3;//Dummy
 	
+	//Encoder, not sure if digital or analog slots
+	public static int
+	screwDriveEncoder1 = 0,//Dummy
+	screwDriveEncoder2 = 1;//Dummy
+	
+	public static int 
+	bottomClawClosed = 100,//Dummy
+	bottomClawOpen = 0; //Dummy
+	
 	//Joystick deadzone values
 	public static double joyDead = .1; //Dummy value
 	
@@ -40,6 +49,6 @@ public class RobotMap {
 	public static final double winchTolerance = 1; //Dummy value
 	public static double winchSetpoint = 1; //Dummy value
 
-	public static double motorPower = 0.5;
+	public static double motorPower = 1;
 	
 }

@@ -14,6 +14,9 @@ public class RobotMap {
 	blmotorPort = 2,
 	brmotorPort = 3;
 	
+	//Gyroscope port
+	public static int gyroPort = 0;
+	
 	//Front Claw Ports
 	public static int 
 	clawWinch = 4,

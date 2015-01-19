@@ -51,4 +51,6 @@ public class RobotMap {
 
 	public static double motorPower = 1;
 	
+	public static double gyroMarginOfError = 0.05;//Dummy
+	public static double robotRotSpeed = 411;//The rotational rate of the robot at full twist in degrees per second
 }

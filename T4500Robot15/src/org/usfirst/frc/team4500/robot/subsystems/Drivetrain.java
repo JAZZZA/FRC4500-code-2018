@@ -40,19 +40,26 @@ public class Drivetrain extends Subsystem {
 		return 1.04 * gyroscope.getAngle();
 	}
 	
-	//Experimenting with having the gyro correct any skewed direction
 	public void driveWithJoystick(double x, double y, double rotation) {
-		double correctRotation = (Math.abs(idealDirection()) - gyroscope.getAngle())/360 + rotation;
 		SmartDashboard.putNumber("Gyro Angle", getAngle());
-		drive.mecanumDrive_Cartesian(x, y, correctRotation, getAngle());
-	}
-	
-	public double idealDirection() {
-		double expectedDir = gyroscope.getAngle();
-		for (int i = 0; i == 10; i++) {
-			expectedDir += Robot.oi.getTwist();	
+		//Gyroscopic correction code -
+		//Detects if the robot is rotating when it isn't supposed to be:
+		if (rotation == 0 && Math.abs(gyroscope.getRate()) > RobotMap.gyroMarginOfError) { 
+			//Finds the rate of unwanted rotation in deg/sec from the gyro, and then converts 
+			//that to a motor rotation speed using a rotation speed constant that was gathered from
+			//the robot experimentally in deg/sec:
+			double correctionRate = gyroscope.getRate() / RobotMap.robotRotSpeed; 
+			//Applies twist in the opposite direction of the unwanted rotation in order to undo it.
+			if (gyroscope.getRate() < 0) {
+				rotation += correctionRate;
+			}
+			if (gyroscope.getRate() > 0) {
+				rotation -= correctionRate;
+			}
 		}
-		return expectedDir;
+		//The code ultimately sends out a corrected version of the rotation value 
+		//in order to undo unwanted rotation, resulting in straight driving!
+		drive.mecanumDrive_Cartesian(x, y, rotation, getAngle());
 	}
 	
 	public void invertDriveMotors(){

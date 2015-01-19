@@ -2,43 +2,35 @@ package org.usfirst.frc.team4500.robot.commands;
 
 import org.usfirst.frc.team4500.robot.Robot;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DriveBackFrontClaw extends Command {
+public class ElevatorSetPickUp extends Command {
 
-	private Timer timer;
-	private double seconds;
-	
-    public DriveBackFrontClaw(double secondsIn) {
+    public ElevatorSetPickUp() {
+    	requires(Robot.elevator);
         // Use requires() here to declare subsystem dependencies
-    	seconds= secondsIn;
-        requires(Robot.drivetrain);
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	timer.start();
-    	Robot.drivetrain.driveBack();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
+    	Robot.elevator.setHeightBottom();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return timer.get()>=seconds;
-    	
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.drivetrain.stop();
     }
 
     // Called when another command which requires one or more of the same

@@ -1,4 +1,7 @@
 package org.usfirst.frc.team4500.robot;
+
+import edu.wpi.first.wpilibj.DigitalSource;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -33,10 +36,20 @@ public class RobotMap {
 	public static int
 	screwDriveEncoder1 = 0,//Dummy
 	screwDriveEncoder2 = 1;//Dummy
-	
+	//Bottom Claw Encoder Values
 	public static int 
 	bottomClawClosed = 100,//Dummy
 	bottomClawOpen = 0; //Dummy
+	
+	//EncoderForWinch
+	public static int
+	winchDriveEncoder1 = 0,
+	winchDriveEncoder2 = 1;
+	
+	//Winch Encoder
+	public static int
+	winchBottom = 0,//Dummy
+	winchPickup = 50; //Dummy
 	
 	//Joystick deadzone values
 	public static double joyDead = .1; //Dummy value
@@ -53,4 +66,6 @@ public class RobotMap {
 	
 	public static double gyroMarginOfError = 0.05;//Dummy
 	public static double robotRotSpeed = 411;//The rotational rate of the robot at full twist in degrees per second
+
+	
 }

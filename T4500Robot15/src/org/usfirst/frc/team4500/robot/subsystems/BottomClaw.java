@@ -32,6 +32,8 @@ public class BottomClaw extends Subsystem {
         	winch.set(Relay.Value.kReverse);
     	}
     }
+    
+
 
 	/*private void backAway() {
 		

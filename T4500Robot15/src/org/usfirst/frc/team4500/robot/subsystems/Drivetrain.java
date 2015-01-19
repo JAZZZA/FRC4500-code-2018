@@ -1,14 +1,12 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
-import org.usfirst.frc.team4500.robot.OI;
-import org.usfirst.frc.team4500.robot.Robot;
 import org.usfirst.frc.team4500.robot.RobotMap;
 import org.usfirst.frc.team4500.robot.commands.DriveWithJoystick;
 
 import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -77,6 +75,11 @@ public class Drivetrain extends Subsystem {
 
 	public void stop() {
 		drive.mecanumDrive_Cartesian(0,0,0,0);	
+	}
+
+	public void driveForward() {
+		drive.mecanumDrive_Cartesian(0,-1,0,0);
+		
 	}
 	
 }

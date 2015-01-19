@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4500.robot;
 
 import org.usfirst.frc.team4500.robot.commands.ControlActuator;
+import org.usfirst.frc.team4500.robot.commands.PickUpBoxCommand;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -23,9 +24,11 @@ public class OI {
    
 	Joystick drivestick = new Joystick(1);
 	Trigger mainTrigger = new JoystickButton(drivestick, 1);
+	Button pickUpBox = new JoystickButton(drivestick, 9);
 	
 	public OI() {
 		mainTrigger.whenActive(new ControlActuator());
+		pickUpBox.whenPressed(new PickUpBoxCommand());
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics
@@ -48,6 +51,7 @@ public class OI {
 	public boolean getTrigger() {
 		return drivestick.getRawButton(1);
 	}
+	
 	
 }
     

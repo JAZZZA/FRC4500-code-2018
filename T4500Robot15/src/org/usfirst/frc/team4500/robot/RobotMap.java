@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4500.robot;
 
-import edu.wpi.first.wpilibj.DigitalSource;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into

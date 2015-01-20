@@ -8,6 +8,8 @@ package org.usfirst.frc.team4500.robot;
  * floating around.
  */
 public class RobotMap {
+	public static double
+	gyroFactor = 1.04;
 	
 	//Motor Ports
 	public static int

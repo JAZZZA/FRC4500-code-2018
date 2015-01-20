@@ -21,7 +21,7 @@ public class Drivetrain extends Subsystem {
 	Talon frMotor = new Talon(RobotMap.frmotorPort);
 	Talon blMotor = new Talon(RobotMap.blmotorPort);
 	Talon brMotor = new Talon(RobotMap.brmotorPort);
-	Gyro gyroscope = new CorrectedGyro(0,RobotMap.);
+	Gyro gyroscope = new CorrectedGyro(0,RobotMap.gyroFactor);
 	RobotDrive drive = new RobotDrive(flMotor,blMotor,frMotor,brMotor);
 	
 	public Drivetrain(){
@@ -49,12 +49,8 @@ public class Drivetrain extends Subsystem {
 			//the robot experimentally in deg/sec:
 			double correctionRate = gyroscope.getRate() / RobotMap.robotRotSpeed; 
 			//Applies twist in the opposite direction of the unwanted rotation in order to undo it.
-			if (gyroscope.getRate() < 0) {
-				rotation += correctionRate;
-			}
-			if (gyroscope.getRate() > 0) {
-				rotation -= correctionRate;
-			}
+			rotation -= correctionRate;
+			
 		}
 		//The code ultimately sends out a corrected version of the rotation value 
 		//in order to undo unwanted rotation, resulting in straight driving!

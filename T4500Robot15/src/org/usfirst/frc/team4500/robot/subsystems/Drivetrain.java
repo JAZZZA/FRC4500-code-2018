@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import extension.CorrectedGyro;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Drivetrain extends Subsystem {
 	Talon frMotor = new Talon(RobotMap.frmotorPort);
 	Talon blMotor = new Talon(RobotMap.blmotorPort);
 	Talon brMotor = new Talon(RobotMap.brmotorPort);
-	Gyro gyroscope = new Gyro(0);
+	Gyro gyroscope = new CorrectedGyro(0,RobotMap.);
 	RobotDrive drive = new RobotDrive(flMotor,blMotor,frMotor,brMotor);
 	
 	public Drivetrain(){

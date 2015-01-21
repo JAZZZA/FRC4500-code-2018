@@ -22,7 +22,7 @@ public class DriveBackTimer extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	timer.start();
-    	Robot.drivetrain.driveBack();
+    	Robot.drivetrain.driveBack(1);
     }
 
     // Called repeatedly when this Command is scheduled to run

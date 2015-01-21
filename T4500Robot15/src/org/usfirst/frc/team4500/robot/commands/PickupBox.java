@@ -5,13 +5,13 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class PickUpBoxCommand extends CommandGroup {
+public class PickupBox extends CommandGroup {
     
-    public  PickUpBoxCommand() {
+    public  PickupBox() {
     	
     	addSequential(new OpenBottomClaw());
-    	addSequential(new ElevaorSetBottom());
+    	addSequential(new ElevatorSetBottom());
         addSequential(new CloseBottomClaw());
-        addSequential(new ElevatorSetPickUp());
+        addSequential(new ElevatorSetPickup());
     }
 }

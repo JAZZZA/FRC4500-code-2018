@@ -1,7 +1,7 @@
 package org.usfirst.frc.team4500.robot;
 
 import org.usfirst.frc.team4500.robot.commands.ControlActuator;
-import org.usfirst.frc.team4500.robot.commands.PickUpBoxCommand;
+import org.usfirst.frc.team4500.robot.commands.PickupBox;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -28,7 +28,7 @@ public class OI {
 	
 	public OI() {
 		mainTrigger.whenActive(new ControlActuator());
-		pickUpBox.whenPressed(new PickUpBoxCommand());
+		pickUpBox.whenPressed(new PickupBox());
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics

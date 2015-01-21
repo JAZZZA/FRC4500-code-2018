@@ -7,10 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ElevaorSetBottom extends Command {
+public class ElevatorSetPickup extends Command {
 
-    public ElevaorSetBottom() {
-    	
+    public ElevatorSetPickup() {
     	requires(Robot.elevator);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -18,11 +17,11 @@ public class ElevaorSetBottom extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.setHeightBottom();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.elevator.setHeightPickUp();
     }
 
     // Make this return true when this Command no longer needs to run execute()

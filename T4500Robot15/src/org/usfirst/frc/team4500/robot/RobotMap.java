@@ -68,5 +68,13 @@ public class RobotMap {
 	public static double gyroMarginOfError = 0.05;//Dummy
 	public static double robotRotSpeed = 411;//The rotational rate of the robot at full twist in degrees per second
 
+	public static double autonomousDriveBack = 0.1; //Dummy
+
+	public static boolean autonomousStrafeDirection = true; //Strafe Right
+
+	public static double autonomousStrafeSpeed = 0.1;//Dummy
+
+	public static double autonomousDriveForward = 1; //Seconds Forward Dummy
+
 	
 }

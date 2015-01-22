@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import extension.CorrectedGyro;
@@ -23,6 +24,7 @@ public class Drivetrain extends Subsystem {
 	Talon brMotor = new Talon(RobotMap.brmotorPort);
 	Gyro gyroscope = new CorrectedGyro(0, RobotMap.gyroFactor);
 	RobotDrive drive = new RobotDrive(flMotor, blMotor, frMotor, brMotor);
+	Ultrasonic sonar = new Ultrasonic(RobotMap.sonarPort1, RobotMap.sonarPort2);
 
 	public Drivetrain() {
 		gyroscope.setSensitivity(7.850195562631942);
@@ -83,6 +85,10 @@ public class Drivetrain extends Subsystem {
 	public void driveForward(double speed) {
 		drive.mecanumDrive_Cartesian(0, speed, 0, 0);
 	}
+	
+	//public boolean sonarInRange(double range) {
+		
+	//}
 
 	/**
 	 * Makes the robot strafe at a given speed and direction

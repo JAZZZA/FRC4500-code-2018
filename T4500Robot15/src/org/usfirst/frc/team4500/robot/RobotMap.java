@@ -18,8 +18,11 @@ public class RobotMap {
 	blmotorPort = 2,
 	brmotorPort = 3;
 	
-	//Gyroscope port
-	public static int gyroPort = 0;
+	//Analog ports
+	public static int 
+	gyroPort = 0,
+	sonarPort1 = 1,
+	sonarPort2 = 2;
 	
 	//Front Claw Ports
 	public static int 

@@ -13,12 +13,11 @@ public class Autonomous extends CommandGroup {
    
     addSequential(new ToggleTopClaw());
     addParallel(new ElevatorSetPickup());
-    addParallel(new DriveBackTimer(RobotMap.autonomousDriveBack));
-    addSequential(new StrafeForSeconds(RobotMap.autonomousStrafeSpeed,RobotMap.autonomousStrafeDirection));
+    //addParallel(new DriveBackTimer(RobotMap.autonomousDriveBack));
+    //addSequential(new StrafeForSeconds(RobotMap.autonomousStrafeSpeed,RobotMap.autonomousStrafeDirection));
+    addParallel(new DriveForwardTimer(RobotMap.autonomousDriveForward));
     //TODO: Vision Alignment Command
-    addSequential(new DriveForwardTimer(RobotMap.autonomousDriveForward));
-    
-   
-    
+    addSequential(new PickupBox());
+
     }
 }

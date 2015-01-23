@@ -45,6 +45,7 @@ public class Robot extends IterativeRobot {
 		drivetrain.invertDriveMotors();
 		pneumaticsDemo = new PneumaticsMain();
 		elevator = new Elevator();
+		drivetrain.intializeSonar();
 		
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();

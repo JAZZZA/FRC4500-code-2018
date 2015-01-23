@@ -82,16 +82,34 @@ public class Drivetrain extends Subsystem {
 		drive.mecanumDrive_Cartesian(0, 0, 0, 0);
 	}
 
+	/**
+	 * Drives robot forward at a specified speed
+	 * @param speed (0 to 1)
+	 */
 	public void driveForward(double speed) {
 		drive.mecanumDrive_Cartesian(0, speed, 0, 0);
 	}
 	
-	//public boolean sonarInRange(double range) {
-		
-	//}
+	public void intializeSonar(){
+		sonar.setAutomaticMode(true);
+		sonar.setEnabled(true);	
+	}
+	/**
+	 * 
+	 * @param range (in inches)
+	 * @return
+	 */
+	public boolean isInRange(double range) {
+		if (sonar.getRangeInches() < range) {
+			return true;
+		} else
+			return false;
+	}
 
 	/**
-	 * Makes the robot strafe at a given speed and direction
+	
+
+ * Makes the robot strafe at a given speed and direction
 	 * 
 	 * @param speed
 	 * @param direction

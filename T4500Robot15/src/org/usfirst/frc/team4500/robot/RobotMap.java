@@ -78,6 +78,7 @@ public class RobotMap {
 	public static double autonomousStrafeSpeed = 0.1;//Dummy
 
 	public static double autonomousDriveForward = 1; //Seconds Forward Dummy
-
+	
+	public static double sonarForwardSpeed = 0.1; //Dummy
 	
 }

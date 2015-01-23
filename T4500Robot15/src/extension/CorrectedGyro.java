@@ -8,7 +8,6 @@ public class CorrectedGyro extends Gyro{
 	public CorrectedGyro(AnalogInput channel, double correctionFactor) {
 		super(channel);
 		this.correctionFactor = correctionFactor;
-		// TODO Auto-generated constructor stub
 	}
 	
 	public CorrectedGyro(int channel, double correctionFactor){

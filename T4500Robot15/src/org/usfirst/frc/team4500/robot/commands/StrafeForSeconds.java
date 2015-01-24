@@ -1,7 +1,9 @@
 package org.usfirst.frc.team4500.robot.commands;
 
+
 import org.usfirst.frc.team4500.robot.Robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -20,10 +22,13 @@ public class StrafeForSeconds extends Command {
 	
 	double seconds;
 	boolean dir;
-	public StrafeForSeconds(double time, boolean direction) {
+	double mySpeed;
+	Timer time;
+	public StrafeForSeconds(double time, boolean direction, double speed) {
 		requires(Robot.drivetrain);
 		seconds = time;
 		dir = direction;
+		mySpeed = speed;
 	}
 
 	// Called just before this Command runs the first time
@@ -32,12 +37,12 @@ public class StrafeForSeconds extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Robot.drivetrain.strafe(seconds, dir);
+		Robot.drivetrain.strafe(mySpeed, dir);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return false;
+		return time.get() >= seconds;
 	}
 
 	// Called once after isFinished returns true

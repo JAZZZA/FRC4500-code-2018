@@ -58,6 +58,15 @@ public class RobotMap {
 	//Joystick deadzone values
 	public static double joyDead = .1; //Dummy value
 	
+	//Autonomous values
+	public static double
+	sonarForwardSpeed = 0.1, //Dummy - Speed to move the robot forward during autonomous
+	sonar1 = 12, //Dummy - Distance to vision align with the box
+	sonar2 = 6, //Dummy - Distance to pickup box
+	strafeSpeed = 0.75,//Dummy - Speed to strafe into the auto zone, probably will ultimately be '1' for full speed
+	strafeTime = 5; //Dummy - Time to strafe left into the auto zone
+
+	
     public static final int pneumaticsModule = 0;
     
 	public static final int openDemo = 0;
@@ -71,14 +80,12 @@ public class RobotMap {
 	public static double gyroMarginOfError = 0.05;//Dummy
 	public static double robotRotSpeed = 411;//The rotational rate of the robot at full twist in degrees per second
 
-	public static double autonomousDriveBack = 0.1; //Dummy
+	// OLD: public static double autonomousDriveBack = 0.1; //Dummy
 
-	public static boolean autonomousStrafeDirection = true; //Strafe Right
+	// OLD: public static boolean autonomousStrafeDirection = true; //Strafe Right
 
-	public static double autonomousStrafeSpeed = 0.1;//Dummy
+	// OLD: public static double autonomousStrafeSpeed = 0.1;//Dummy
 
-	public static double autonomousDriveForward = 1; //Seconds Forward Dummy
-	
-	public static double sonarForwardSpeed = 0.1; //Dummy
+	// OLD: public static double autonomousDriveForward = 1; //Seconds Forward Dummy
 	
 }

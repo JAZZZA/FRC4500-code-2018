@@ -107,9 +107,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	/**
-	
-
- * Makes the robot strafe at a given speed and direction
+	 * Makes the robot strafe at a given speed and direction
 	 * 
 	 * @param speed
 	 * @param direction

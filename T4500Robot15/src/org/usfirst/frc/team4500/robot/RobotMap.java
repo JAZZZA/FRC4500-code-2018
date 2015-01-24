@@ -16,7 +16,9 @@ public class RobotMap {
 	flmotorPort = 0,
 	frmotorPort = 1,
 	blmotorPort = 2,
-	brmotorPort = 3;
+	brmotorPort = 3,
+	elevatorMotor = 4,
+	screwdriveMotor = 5; 
 	
 	//Analog ports
 	public static int 
@@ -24,10 +26,7 @@ public class RobotMap {
 	sonarPort1 = 1,
 	sonarPort2 = 2;
 	
-	//Front Claw Ports
-	public static int 
-	clawWinch = 4,
-	clawBMotor = 5; 
+
 	
 	//Solenoids
 	public static int
@@ -40,17 +39,18 @@ public class RobotMap {
 	public static int
 	screwDriveEncoder1 = 0,//Dummy
 	screwDriveEncoder2 = 1;//Dummy
+	
 	//Bottom Claw Encoder Values
 	public static int 
 	bottomClawClosed = 100,//Dummy
 	bottomClawOpen = 0; //Dummy
 	
-	//EncoderForWinch
+	//Encoder For elevator winch
 	public static int
 	winchDriveEncoder1 = 0,
 	winchDriveEncoder2 = 1;
 	
-	//Winch Encoder
+	//Elevator Winch Encoder set down and pick up values
 	public static int
 	winchBottom = 0,//Dummy
 	winchPickup = 50; //Dummy
@@ -72,6 +72,7 @@ public class RobotMap {
 	public static final int openDemo = 0;
 	public static final int closeDemo = 1;
 	
+	//Winch PID stuffz
 	public static final double winchTolerance = 1; //Dummy value
 	public static double winchSetpoint = 1; //Dummy value
 

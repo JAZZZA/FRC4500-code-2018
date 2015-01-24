@@ -4,6 +4,8 @@ import org.usfirst.frc.team4500.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 /**
@@ -11,21 +13,21 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
  */
 public class Elevator extends PIDSubsystem {
 
-	static double 
-	kp = 0, 
-	ki = 0,
+	private static double 
+	kp = 1, //TODO: PID 
+	ki = 0, 
 	kd = 0;
-	
-	Encoder winchEncoder = new Encoder(RobotMap.winchDriveEncoder1, RobotMap.winchDriveEncoder2);
-	Relay winch = new Relay(RobotMap.clawWinch);
+
+	Encoder winchEncoder;
+	SpeedController winch;
 
     // Initialize your subsystem here
     public Elevator() {
     	super("Winch", kp, ki, kd);
-        // Use these to get going:
-        setSetpoint(RobotMap.winchSetpoint); //Sets where the PID controller should move the system
+    	winch = new Talon(RobotMap.elevatorMotor);
+    	winchEncoder = new Encoder(RobotMap.winchDriveEncoder1, RobotMap.winchDriveEncoder2);
+        //setSetpoint(RobotMap.winchSetpoint); //Sets where the PID controller should move the system - may not need here
         setAbsoluteTolerance(RobotMap.winchTolerance);
-        enable();// Enables the PID controller.
     }
     
     public void initDefaultCommand() {
@@ -37,16 +39,15 @@ public class Elevator extends PIDSubsystem {
         // Return your input value for the PID loop
         // e.g. a sensor, like a potentiometer:
         // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    	return 0.0;
+    	return winchEncoder.get();
     }
     
     protected void usePIDOutput(double output) {
-        // Use output to drive your system, like a motor
-        // e.g. yourMotor.set(output);
+    	winch.pidWrite(output);
     }
     
     public void setHeightBottom() {
-    	if (winchEncoder.get() <= RobotMap.winchBottom){
+    	/*if (winchEncoder.get() <= RobotMap.winchBottom){
     	while(winchEncoder.get() <= RobotMap.winchBottom)
     		winch.setDirection(Relay.Direction.kForward);
     	}
@@ -55,11 +56,11 @@ public class Elevator extends PIDSubsystem {
         		winch.setDirection(Relay.Direction.kReverse);
     	} else {
     		winch.set(Relay.Value.kOff);
-    	}		
+    	}*/		
     }
     
     public void setHeightPickUp() {
-    	if (winchEncoder.get() <= RobotMap.winchPickup){
+    	/*if (winchEncoder.get() <= RobotMap.winchPickup){
     	while(winchEncoder.get() <= RobotMap.winchPickup)
     		winch.setDirection(Relay.Direction.kForward);
     	}
@@ -68,6 +69,6 @@ public class Elevator extends PIDSubsystem {
         		winch.setDirection(Relay.Direction.kReverse);
     	} else {
     		winch.set(Relay.Value.kOff);
-    	}		
+    	}	*/	
     }
 }

@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class BottomClaw extends Subsystem {
     
-	Relay winch = new Relay(RobotMap.clawWinch);
+	Relay winch = new Relay(RobotMap.screwdriveMotor);
 	Encoder screwEncoder = new Encoder(RobotMap.screwDriveEncoder1, RobotMap.screwDriveEncoder2);
 	
 	//int initialEncode = screwEncoder.get();

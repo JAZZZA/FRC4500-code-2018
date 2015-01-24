@@ -52,7 +52,7 @@ public class Autonomous extends CommandGroup {
 														// robot moves to next
 														// tote
 
-				// Vision Alignment Command (sequential)
+				// 	Vision Alignment Command (sequential)
 				addSequential(new DriveUntilSonar(RobotMap.sonar2,
 						RobotMap.sonarForwardSpeed)); // In position to pick up
 														// tote 2

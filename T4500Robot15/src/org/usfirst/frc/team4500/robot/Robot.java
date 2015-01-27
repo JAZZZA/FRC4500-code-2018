@@ -3,6 +3,7 @@ package org.usfirst.frc.team4500.robot;
 
 
 import org.usfirst.frc.team4500.robot.commands.Autonomous;
+import org.usfirst.frc.team4500.robot.subsystems.Arduino;
 import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.Elevator;
@@ -32,6 +33,7 @@ public class Robot extends IterativeRobot {
     public static TopClaw topClaw;
     public static BottomClaw bottomClaw;
     public static Elevator elevator;
+    public static Arduino arduino;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -47,6 +49,7 @@ public class Robot extends IterativeRobot {
 		pneumaticsDemo = new PneumaticsMain();
 		elevator = new Elevator();
 		drivetrain.intializeSonar();
+		arduino = new Arduino();
 		
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();

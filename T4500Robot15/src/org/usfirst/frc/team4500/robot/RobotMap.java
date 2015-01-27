@@ -26,6 +26,10 @@ public class RobotMap {
 	sonarPort1 = 1,
 	sonarPort2 = 2;
 	
+	
+	public static int 
+	arduinoOutput = 0;
+	
 
 	
 	//Solenoids

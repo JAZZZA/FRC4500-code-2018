@@ -24,10 +24,6 @@ public class Drivetrain extends Subsystem {
 	RobotDrive drive = new RobotDrive(flMotor,blMotor,frMotor,brMotor);
 	
 	public Drivetrain(){
-		
-		
-		
-		
 		gyroscope.setSensitivity(7.850195562631942);
 		gyroscope.initGyro();
 		gyroscope.reset();

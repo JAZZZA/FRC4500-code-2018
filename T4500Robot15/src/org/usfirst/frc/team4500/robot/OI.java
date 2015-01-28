@@ -34,6 +34,7 @@ public class OI {
 		mainTrigger.whenActive(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
+		
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics

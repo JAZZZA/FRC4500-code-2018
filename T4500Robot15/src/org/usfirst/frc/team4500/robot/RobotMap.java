@@ -1,4 +1,7 @@
 package org.usfirst.frc.team4500.robot;
+
+import edu.wpi.first.wpilibj.DigitalSource;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -20,6 +23,20 @@ public class RobotMap {
 	
 	//Joystick deadzone values
 	public static double joyDead = .01; //<-- Dummy value
+
+	public static int screwdriveMotor = 5;
+
+	public static int screwDriveEncoder1 = 0;
+
+	public static int screwDriveEncoder2 = 1;
+
+	public static double screwSpeed = 0.5;
+
+	public static int bottomClawClosed = 100;
+
+	public static int bottomClawOpen = 0;
+
+	public static double timeToMoveScrew = 0.5;
 
 
 	public static final int openDemo = 0;

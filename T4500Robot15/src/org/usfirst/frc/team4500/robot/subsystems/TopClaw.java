@@ -45,11 +45,7 @@ public class TopClaw extends Subsystem {
 		SmartDashboard.putString("Top claw status", clawStatus);
 	}
 	
-	
-    
-	public void closeTopClaw(){
-		
-	}
+
 	
 	public void initDefaultCommand() {
         // Set the default command for a subsystem here.

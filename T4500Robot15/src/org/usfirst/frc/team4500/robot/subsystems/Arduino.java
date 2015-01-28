@@ -33,5 +33,9 @@ public class Arduino extends Subsystem {
 		}
     }
     
+    public void sendSignal() {
+    	
+    }
+    
 }
 

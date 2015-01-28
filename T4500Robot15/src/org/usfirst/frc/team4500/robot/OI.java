@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4500.robot;
 
-import org.usfirst.frc.team4500.robot.commands.ControlActuator;
+
 import org.usfirst.frc.team4500.robot.commands.PickupObject;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -27,7 +27,6 @@ public class OI {
 	Button pickUpBox = new JoystickButton(drivestick, 9);
 	
 	public OI() {
-		mainTrigger.whenActive(new ControlActuator());
 		pickUpBox.whenPressed(new PickupObject());
 	}
 	

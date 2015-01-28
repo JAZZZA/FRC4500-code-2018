@@ -19,7 +19,9 @@ public class CloseBottomClaw extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.bottomClaw.closeClaw();
+    	//Robot.bottomClaw.closeClaw();
+    	//IF ENCODER NOT WORKING, CHANGE TO -
+    	Robot.bottomClaw.noEncodeCloseClaw();
     }
 
     // Make this return true when this Command no longer needs to run execute()

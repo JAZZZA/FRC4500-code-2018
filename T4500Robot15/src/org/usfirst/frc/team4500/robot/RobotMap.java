@@ -45,6 +45,10 @@ public class RobotMap {
 	public static int limitBottom = 4;
 	
 	public static final int openDemo = 0;
+	
+	public static int limitBottomClawO = 6;
+	
+	public static int limitBottomClawC = 7;
 
 	
 	

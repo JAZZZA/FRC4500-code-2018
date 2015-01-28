@@ -2,6 +2,7 @@ package org.usfirst.frc.team4500.robot.subsystems;
 
 import org.usfirst.frc.team4500.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Timer;
@@ -16,6 +17,9 @@ public class BottomClaw extends Subsystem {
     
 	Talon winch = new Talon(RobotMap.screwdriveMotor);
 	Encoder screwEncoder = new Encoder(RobotMap.screwDriveEncoder1, RobotMap.screwDriveEncoder2);
+	DigitalInput limitClose = new DigitalInput(RobotMap.limitBottomClawC); //Limit Top Switch  = Port 3
+	DigitalInput limitOpen = new DigitalInput(RobotMap.limitBottomClawO);
+	
 	
 	//int initialEncode = screwEncoder.get();
 
@@ -25,13 +29,13 @@ public class BottomClaw extends Subsystem {
     }
     
     public void closeClaw() {
-    	while(screwEncoder.get() <= RobotMap.bottomClawClosed) {
+    	while(limitClose.get() == false) {
         	winch.set(RobotMap.screwSpeed);
     	}
     }
     
     public void openClaw() {
-    	while(screwEncoder.get() >= RobotMap.bottomClawOpen) {
+    	while(limitOpen.get() == false) {
         	winch.set(-1*RobotMap.screwSpeed);
     	}
     }

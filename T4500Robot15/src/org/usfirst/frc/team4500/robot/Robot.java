@@ -4,10 +4,12 @@ package org.usfirst.frc.team4500.robot;
 import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team4500.robot.subsystems.Elevator;
 import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsDemo;
 import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -30,20 +32,23 @@ public class Robot extends IterativeRobot {
     public static PneumaticsDemo pneumaticsDemo;
     public static TopClaw topClaw;
     public static BottomClaw bottomClaw;
-
+    public static Elevator elevator;
+    DigitalInput limitTop;
+    DigitalInput limitBottom;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
 		
-		
+		limitTop = new DigitalInput(3); //Limit Top Switch  = Port 3
+		limitBottom = new DigitalInput(1); //Limit Bottom Switch = Port 4
 		drivetrain = new Drivetrain();
 		drivetrain.invertDriveMotors();
 		pneumaticsDemo = new PneumaticsDemo();
 		topClaw = new TopClaw();
 		bottomClaw = new BottomClaw();
-		
+		elevator = new Elevator();
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
         

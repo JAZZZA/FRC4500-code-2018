@@ -38,10 +38,16 @@ public class RobotMap {
 
 	public static double timeToMoveScrew = 0.5;
 
+	public static int elevatorMotor = 4;
 
+	public static int limitTop = 3;
+
+	public static int limitBottom = 4;
+	
 	public static final int openDemo = 0;
 
-
+	
+	
 	public static final int closeDemo = 1;
 	
     public static final int pneumaticsModule = 0;

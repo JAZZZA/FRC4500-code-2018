@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
 import org.usfirst.frc.team4500.robot.RobotMap;
+import org.usfirst.frc.team4500.robot.commands.CompressorStart;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -19,9 +20,9 @@ public class PneumaticsDemo extends Subsystem {
     // here. Call these from Commands.
 
     public void initDefaultCommand() {
+     
+    	setDefaultCommand(new CompressorStart());
     	
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
     }
     
     public void startCompressor() {

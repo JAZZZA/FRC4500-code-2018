@@ -50,6 +50,8 @@ public class RobotMap {
 	
 	public static int limitBottomClawC = 7;
 
+	public static int arduinoOutput = 0;
+
 	
 	
 	public static final int closeDemo = 1;

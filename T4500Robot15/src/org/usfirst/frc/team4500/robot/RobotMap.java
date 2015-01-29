@@ -77,6 +77,10 @@ public class RobotMap {
 	//Solenoid ports on PCM
 	public static int openBottomClaw = 0;
 	public static int closeBottomClaw = 1;
+
+	public static int limitTop = 1;
+
+	public static int limitBottom = 2;
 	
 	
 }

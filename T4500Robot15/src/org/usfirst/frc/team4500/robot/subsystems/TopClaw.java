@@ -24,6 +24,7 @@ public class TopClaw extends Subsystem {
     	if (actuOne.get().equals(DoubleSolenoid.Value.kForward)) {
     		actuOne.set(DoubleSolenoid.Value.kReverse);
     	} else {
+    		actuOne.set(DoubleSolenoid.Value.kForward);  		
     	}
     }
 }

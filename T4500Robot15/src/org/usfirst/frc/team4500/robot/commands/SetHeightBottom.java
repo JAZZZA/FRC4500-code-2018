@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class setHeightBottom extends Command {
+public class SetHeightBottom extends Command {
 
-    public setHeightBottom() {
+    public SetHeightBottom() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.elevator);

@@ -1,7 +1,5 @@
 package org.usfirst.frc.team4500.robot;
 
-import edu.wpi.first.wpilibj.DigitalSource;
-
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -9,20 +7,20 @@ import edu.wpi.first.wpilibj.DigitalSource;
  * floating around.
  */
 public class RobotMap {
+
+	// Motor Ports
+	public static double motorPower = 1;
+
+	public static int flmotorPort = 0, frmotorPort = 1, blmotorPort = 2,
+			brmotorPort = 3;
+
+	// Joystick deadzone values
+	public static double breakSpeed = 0.1; // How much to move the motor to keep
+											// the elevator from moving down for
+											// now
+	public static double goDownResistance = 0;
 	
-	//Motor Ports
-	public static double
-	motorPower = 1;
-	
-	public static int
-	flmotorPort = 0,
-	frmotorPort = 1,
-	blmotorPort = 2,
-	brmotorPort = 3;
-	
-	
-	//Joystick deadzone values
-	public static double joyDead = .01; //<-- Dummy value
+	public static double joyDead = .01; // <-- Dummy value
 
 	public static int screwdriveMotor = 5;
 
@@ -40,26 +38,21 @@ public class RobotMap {
 
 	public static int elevatorMotor = 4;
 
-	public static int limitTop = 3;
+	public static int limitTop = 2;
 
-	public static int limitBottom = 4;
-	
+	//public static int limitBottom = 4;
+
 	public static final int openDemo = 0;
-	
-	public static int limitBottomClawO = 6;
-	
-	public static int limitBottomClawC = 7;
+
+	public static int limitBottomClawO = 0;
+
+	public static int limitBottomClawC = 6;
 
 	public static int arduinoOutput = 0;
 
-	
-	
 	public static final int closeDemo = 1;
-	
-    public static final int pneumaticsModule = 0;
 
+	public static final int pneumaticsModule = 0;
 
-	public static final int 
-	TopClaw1 = 0,
-	TopClaw2 = 1;
+	public static final int TopClaw1 = 0, TopClaw2 = 1;
 }

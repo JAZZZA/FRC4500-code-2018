@@ -2,7 +2,6 @@ package org.usfirst.frc.team4500.robot;
 
 
 import org.usfirst.frc.team4500.robot.commands.CloseBottomClaw;
-import org.usfirst.frc.team4500.robot.commands.ControlActuator;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
 import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
@@ -22,18 +21,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    //// CREATING BUTTONS
-    // One type of button is a joystick button which is any button on a joystick.
-    // You create one by telling it which joystick it's on and which button
-    // number it is.
-    // Joystick stick = new Joystick(port);
-    // Button button = new JoystickButton(stick, buttonNumber);
-    
    
 	Joystick drivestick = new Joystick(0);
 	Trigger mainTrigger = new JoystickButton(drivestick, 1);
 	Button backwardButton = new JoystickButton(drivestick, 3);
-	Button forwardButton = new JoystickButton(drivestick, 4);
+	Button forwardButton = new JoystickButton(drivestick, 5);
 	Button topClawButton = new JoystickButton(drivestick, 2);
 	Button liftButton = new JoystickButton(drivestick, 6);
 	Button lowerButton = new JoystickButton(drivestick, 4);
@@ -45,8 +37,8 @@ public class OI {
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
 		topClawButton.whenPressed(new ToggleTopClaw());
-		liftButton.whenPressed(new SetHeightTop());
-		lowerButton.whenPressed(new SetHeightBottom());
+		liftButton.whileHeld(new SetHeightTop());
+		lowerButton.whileHeld(new SetHeightBottom());
 		outButton.whenPressed(new OpenBottomClaw());
 		inButton.whenPressed(new CloseBottomClaw());
 	}

@@ -10,9 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class SetHeightBottom extends Command {
 
     public SetHeightBottom() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.elevator);
+        requires(Robot.elevator);
     }
 
     // Called just before this Command runs the first time
@@ -21,8 +19,7 @@ public class SetHeightBottom extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elevator.setHeightBottom();
-    	
+    	Robot.elevator.breakElevator(false);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,6 +29,7 @@ public class SetHeightBottom extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.elevator.breakElevator(true);
     }
 
     // Called when another command which requires one or more of the same

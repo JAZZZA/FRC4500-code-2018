@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Arduino extends Subsystem {
     private boolean mode = false;
-    AnalogOutput arduino = new AnalogOutput(RobotMap.arduinoOutput);
+    AnalogOutput arduino = new AnalogOutput(/*RobotMap.arduinoOutput*/4);
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 

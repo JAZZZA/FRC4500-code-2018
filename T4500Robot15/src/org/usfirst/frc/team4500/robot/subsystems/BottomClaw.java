@@ -16,7 +16,7 @@ public class BottomClaw extends Subsystem {
 	Timer t1;
     
 	Talon winch = new Talon(RobotMap.screwdriveMotor);
-	Encoder screwEncoder = new Encoder(RobotMap.screwDriveEncoder1, RobotMap.screwDriveEncoder2);
+	//Encoder screwEncoder = new Encoder(RobotMap.screwDriveEncoder1, RobotMap.screwDriveEncoder2);
 	DigitalInput limitClose = new DigitalInput(RobotMap.limitBottomClawC); //Limit Top Switch  = Port 3
 	DigitalInput limitOpen = new DigitalInput(RobotMap.limitBottomClawO);
 	

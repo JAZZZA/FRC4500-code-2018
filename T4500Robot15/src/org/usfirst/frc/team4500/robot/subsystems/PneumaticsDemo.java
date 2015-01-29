@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class PneumaticsDemo extends Subsystem {
 	
 	Compressor compress = new Compressor(RobotMap.pneumaticsModule);
-	DoubleSolenoid demoSolenoid = new DoubleSolenoid(RobotMap.pneumaticsModule, RobotMap.openDemo, RobotMap.closeDemo);
+	//DoubleSolenoid demoSolenoid = new DoubleSolenoid(RobotMap.pneumaticsModule, RobotMap.openDemo, RobotMap.closeDemo);
 	
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -29,11 +29,11 @@ public class PneumaticsDemo extends Subsystem {
     	compress.start();
     }
     
-    public void toggleDemo() {
+    /*public void toggleDemo() {
     	if (demoSolenoid.get().equals(DoubleSolenoid.Value.kForward))
     		demoSolenoid.set(DoubleSolenoid.Value.kReverse);
     	else demoSolenoid.set(DoubleSolenoid.Value.kForward);
-    }
+    }*/
     
 }
 

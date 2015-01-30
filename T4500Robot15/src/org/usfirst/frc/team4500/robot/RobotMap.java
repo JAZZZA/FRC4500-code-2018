@@ -9,7 +9,7 @@ package org.usfirst.frc.team4500.robot;
 public class RobotMap {
 
 	// Motor Ports
-	public static double motorPower = 1;
+	public static double motorPower = .75;
 
 	public static int flmotorPort = 0, frmotorPort = 1, blmotorPort = 2,
 			brmotorPort = 3;
@@ -20,7 +20,7 @@ public class RobotMap {
 											// now
 	public static double goDownResistance = 0;
 	
-	public static double joyDead = .01; // <-- Dummy value
+	public static double joyDead = .15; // <-- Dummy value
 
 	public static int screwdriveMotor = 5;
 

@@ -21,8 +21,11 @@ public class DefaultElevatorCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (Robot.oi.getTrigger()) {
-        Robot.newElevator.winchmotor.set(.5);
+    	if (Robot.oi.liftButton.get()) {
+    		Robot.newElevator.winchmotor.set(1);
+    	}
+    	if (Robot.oi.lowerButton.get()) {
+    		Robot.newElevator.winchmotor.set(-1);
     	}
     	else {
     		Robot.newElevator.winchmotor.set(0);

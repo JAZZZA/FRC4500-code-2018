@@ -28,7 +28,7 @@ public class Elevator extends Subsystem {
     	}*/
     
     public void setHeightTop(){
-    	while (limitTop.get() == false) //changed while to if for hold down
+    	if (limitTop.get() == false) //changed while to if for hold down
     		winch.set(1);
     }
     

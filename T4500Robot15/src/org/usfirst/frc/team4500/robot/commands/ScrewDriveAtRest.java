@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class SetHeightBottom extends Command {
+public class ScrewDriveAtRest extends Command {
 
-    public SetHeightBottom() {
-        requires(Robot.elevator);
+    public ScrewDriveAtRest() {
+    	requires(Robot.bottomClaw);
     }
 
     // Called just before this Command runs the first time
@@ -19,17 +19,16 @@ public class SetHeightBottom extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elevator.breakElevator(false);
+    	Robot.bottomClaw.atRest();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	//Robot.elevator.breakElevator(true);
     }
 
     // Called when another command which requires one or more of the same

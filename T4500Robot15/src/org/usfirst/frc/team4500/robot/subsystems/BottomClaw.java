@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
 import org.usfirst.frc.team4500.robot.RobotMap;
+import org.usfirst.frc.team4500.robot.commands.ScrewDriveAtRest;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
@@ -24,8 +25,13 @@ public class BottomClaw extends Subsystem {
 	//int initialEncode = screwEncoder.get();
 
     public void initDefaultCommand() {
+    	setDefaultCommand(new ScrewDriveAtRest());
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    }
+    
+    public void atRest() {
+    	winch.set(0);
     }
     
     public void closeClaw() {

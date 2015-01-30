@@ -2,13 +2,14 @@ package org.usfirst.frc.team4500.robot;
 
 
 import org.usfirst.frc.team4500.robot.commands.CloseBottomClaw;
+//import org.usfirst.frc.team4500.robot.commands.ElevatorMoveUp;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
 import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
-import org.usfirst.frc.team4500.robot.commands.SetHeightTop;
+import org.usfirst.frc.team4500.robot.commands.ScrewDriveAtRest;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
-import org.usfirst.frc.team4500.robot.commands.SetHeightBottom;
+//import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -22,13 +23,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class OI {
    
-	Joystick drivestick = new Joystick(0);
+	Joystick drivestick = new Joystick(1);
+	Joystick elevatorStick = new Joystick(0);
 	Trigger mainTrigger = new JoystickButton(drivestick, 1);
 	Button backwardButton = new JoystickButton(drivestick, 3);
 	Button forwardButton = new JoystickButton(drivestick, 5);
 	Button topClawButton = new JoystickButton(drivestick, 2);
-	Button liftButton = new JoystickButton(drivestick, 6);
-	Button lowerButton = new JoystickButton(drivestick, 4);
+	//Button liftButton = new JoystickButton(drivestick, 6);
+	//Button lowerButton = new JoystickButton(drivestick, 4);
 	Button outButton = new JoystickButton(drivestick, 11);
 	Button inButton = new JoystickButton(drivestick, 12);
 	
@@ -37,10 +39,11 @@ public class OI {
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
 		topClawButton.whenPressed(new ToggleTopClaw());
-		liftButton.whileHeld(new SetHeightTop());
-		lowerButton.whileHeld(new SetHeightBottom());
-		outButton.whenPressed(new OpenBottomClaw());
-		inButton.whenPressed(new CloseBottomClaw());
+		outButton.whileHeld(new OpenBottomClaw());
+		outButton.whenReleased(new ScrewDriveAtRest());
+		inButton.whileHeld(new CloseBottomClaw());
+		inButton.whenReleased(new ScrewDriveAtRest());
+		//liftButton.whileHeld(new ElevatorMoveUp());
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics
@@ -48,6 +51,10 @@ public class OI {
 		double x = Math.abs(drivestick.getX()) > RobotMap.joyDead ? drivestick.getX() : 0;
 		SmartDashboard.putNumber("x", x);
 		return RobotMap.motorPower*x;
+	}
+	
+	public double getElevator() {
+		return elevatorStick.getY();
 	}
 	
 	public double getY() {

@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class NewElevator extends Subsystem {
 	Talon winchmotor = new Talon(RobotMap.elevatorMotor);
     
-
     public void initDefaultCommand() {
         winchmotor.set(Robot.oi.getElevator());
     }

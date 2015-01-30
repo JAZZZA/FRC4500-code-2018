@@ -36,7 +36,7 @@ public class RobotMap {
 
 	public static double timeToMoveScrew = 0.5;
 
-	public static int elevatorMotor = 4;
+	public static int elevatorMotor = 6;
 
 	public static int limitTop = 2;
 

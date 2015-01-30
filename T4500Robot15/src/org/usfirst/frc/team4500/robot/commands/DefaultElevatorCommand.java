@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class CloseBottomClaw extends Command {
+public class DefaultElevatorCommand extends Command {
 
-    public CloseBottomClaw() {
+    public DefaultElevatorCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.bottomClaw);
+    	requires(Robot.newElevator);
     }
 
     // Called just before this Command runs the first time
@@ -21,17 +21,21 @@ public class CloseBottomClaw extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.bottomClaw.closeClaw();
+    	if (Robot.oi.getTrigger()) {
+        Robot.newElevator.winchmotor.set(.5);
+    	}
+    	else {
+    		Robot.newElevator.winchmotor.set(0);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.oi.innerLimit.get(); //changed from true
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.bottomClaw.atRest();
     }
 
     // Called when another command which requires one or more of the same

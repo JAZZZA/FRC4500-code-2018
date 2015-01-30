@@ -11,6 +11,8 @@ import org.usfirst.frc.team4500.robot.commands.ScrewDriveAtRest;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 
+
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -22,9 +24,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-   
-	Joystick drivestick = new Joystick(1);
-	Joystick elevatorStick = new Joystick(0);
+	public DigitalInput outerLimit = new DigitalInput(RobotMap.limitBottomClawO);
+	public DigitalInput innerLimit = new DigitalInput(RobotMap.limitBottomClawC);
+	
+	
+	Joystick drivestick = new Joystick(0);
+	//Joystick elevatorStick = new Joystick(0);
 	Trigger mainTrigger = new JoystickButton(drivestick, 1);
 	Button backwardButton = new JoystickButton(drivestick, 3);
 	Button forwardButton = new JoystickButton(drivestick, 5);
@@ -33,16 +38,17 @@ public class OI {
 	//Button lowerButton = new JoystickButton(drivestick, 4);
 	Button outButton = new JoystickButton(drivestick, 11);
 	Button inButton = new JoystickButton(drivestick, 12);
+	Button gyroReset = new JoystickButton(drivestick, 9);
 	
 	public OI() {
-		mainTrigger.whenActive(new ResetGyro());
+		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
 		topClawButton.whenPressed(new ToggleTopClaw());
-		outButton.whileHeld(new OpenBottomClaw());
-		outButton.whenReleased(new ScrewDriveAtRest());
-		inButton.whileHeld(new CloseBottomClaw());
-		inButton.whenReleased(new ScrewDriveAtRest());
+		outButton.whenPressed(new OpenBottomClaw());
+		//outButton.whenReleased(new ScrewDriveAtRest());
+		inButton.whenPressed(new CloseBottomClaw());
+		//inButton.whenReleased(new ScrewDriveAtRest());
 		//liftButton.whileHeld(new ElevatorMoveUp());
 	}
 	
@@ -54,7 +60,7 @@ public class OI {
 	}
 	
 	public double getElevator() {
-		return elevatorStick.getY();
+		return drivestick.getThrottle();
 	}
 	
 	public double getY() {

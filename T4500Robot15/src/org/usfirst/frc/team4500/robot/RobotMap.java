@@ -24,9 +24,9 @@ public class RobotMap {
 
 	public static int screwdriveMotor = 5;
 
-	public static int screwDriveEncoder1 = 0;
+	public static int screwDriveEncoder1 = 3;
 
-	public static int screwDriveEncoder2 = 1;
+	public static int screwDriveEncoder2 = 4;
 
 	public static double screwSpeed = 0.5;
 

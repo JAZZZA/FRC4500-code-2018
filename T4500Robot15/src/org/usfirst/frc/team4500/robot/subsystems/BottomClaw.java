@@ -32,9 +32,9 @@ public class BottomClaw extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void encoderTest() {
+    /*public void encoderTest() {
     	SmartDashboard.putNumber("EncoderValue", screwEncoder.get());
-    }
+    }*/
     
     public void atRest() {
     	winch.set(0);

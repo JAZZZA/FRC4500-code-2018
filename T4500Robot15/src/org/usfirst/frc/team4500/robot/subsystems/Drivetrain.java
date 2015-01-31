@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
+import org.usfirst.frc.team4500.robot.Robot;
 import org.usfirst.frc.team4500.robot.RobotMap;
 import org.usfirst.frc.team4500.robot.commands.DriveWithJoystick;
 
@@ -39,6 +40,7 @@ public class Drivetrain extends Subsystem {
 	}
 	
 	public void driveWithJoystick(double x, double y, double rotation) {
+		SmartDashboard.putNumber("Encoder", Robot.bottomClaw.screwEncoder.get());
 		SmartDashboard.putNumber("Gyro Angle", getAngle());
 		drive.mecanumDrive_Cartesian(x, y, rotation, getAngle());
 	}

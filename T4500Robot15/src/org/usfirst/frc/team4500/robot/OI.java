@@ -27,8 +27,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	public DigitalInput outerLimit = new DigitalInput(RobotMap.limitBottomClawO);
-	public DigitalInput innerLimit = new DigitalInput(RobotMap.limitBottomClawC);
+	//public DigitalInput outerLimit = new DigitalInput(RobotMap.limitBottomClawO);
+	//public DigitalInput innerLimit = new DigitalInput(RobotMap.limitBottomClawC);
 	
 	
 	Joystick drivestick = new Joystick(0);
@@ -39,8 +39,8 @@ public class OI {
 	Button topClawButton = new JoystickButton(drivestick, 2);
 	public Button liftButton = new JoystickButton(drivestick, 4);
 	public Button lowerButton = new JoystickButton(drivestick, 6);
-	Button outButton = new JoystickButton(drivestick, 11);
-	Button inButton = new JoystickButton(drivestick, 12);
+	public Button outButton = new JoystickButton(drivestick, 11);
+	public Button inButton = new JoystickButton(drivestick, 12);
 	Button gyroReset = new JoystickButton(drivestick, 9);
 	
 	public OI() {

@@ -28,7 +28,7 @@ public class OpenBottomClaw extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.oi.outerLimit.get(); //changed from true
+        return false;// Robot.oi.outerLimit.get(); //changed from true
     }
 
     // Called once after isFinished returns true

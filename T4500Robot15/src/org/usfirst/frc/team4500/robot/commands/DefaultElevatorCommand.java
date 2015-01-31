@@ -24,7 +24,7 @@ public class DefaultElevatorCommand extends Command {
     	if (Robot.oi.liftButton.get()) {
     		Robot.newElevator.winchmotor.set(1);
     	}
-    	if (Robot.oi.lowerButton.get()) {
+    	else if (Robot.oi.lowerButton.get()) {
     		Robot.newElevator.winchmotor.set(-1);
     	}
     	else {

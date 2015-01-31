@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -17,17 +18,22 @@ public class BottomClaw extends Subsystem {
 	Timer t1;
     
 	Talon winch = new Talon(RobotMap.screwdriveMotor);
-	//Encoder screwEncoder = new Encoder(RobotMap.screwDriveEncoder1, RobotMap.screwDriveEncoder2);
+	Encoder screwEncoder = new Encoder(RobotMap.screwDriveEncoder1, RobotMap.screwDriveEncoder2);
 	//DigitalInput limitClose = new DigitalInput(RobotMap.limitBottomClawC); //Limit Top Switch  = Port 3
 	//DigitalInput limitOpen = new DigitalInput(RobotMap.limitBottomClawO);
 	
 	
 	//int initialEncode = screwEncoder.get();
+	
 
     public void initDefaultCommand() {
     	setDefaultCommand(new ScrewDriveAtRest());
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    }
+    
+    public void encoderTest() {
+    	SmartDashboard.putNumber("EncoderValue", screwEncoder.get());
     }
     
     public void atRest() {

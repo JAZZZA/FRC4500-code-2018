@@ -13,6 +13,8 @@ public class RobotMap {
 
 	public static int flmotorPort = 0, frmotorPort = 1, blmotorPort = 2,
 			brmotorPort = 3;
+	
+	public static int bottomClawClosed = 100, bottomClawOpen = 0;
 
 	// Joystick deadzone values
 	public static double breakSpeed = 0.1; // How much to move the motor to keep
@@ -20,7 +22,7 @@ public class RobotMap {
 											// now
 	public static double goDownResistance = 0;
 	
-	public static double joyDead = .15; // <-- Dummy value
+	public static double joyDead = .15;
 
 	public static int screwdriveMotor = 5;
 
@@ -29,10 +31,6 @@ public class RobotMap {
 	public static int screwDriveEncoder2 = 4;
 
 	public static double screwSpeed = 0.5;
-
-	public static int bottomClawClosed = 100;
-
-	public static int bottomClawOpen = 0;
 
 	public static double timeToMoveScrew = 0.5;
 

@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ScrewDriveAtRest extends Command {
+public class MoveScrewDriveOut extends Command {
 
-    public ScrewDriveAtRest() {
-    	requires(Robot.bottomClaw);
+    public MoveScrewDriveOut() {
+        requires(Robot.bottomClaw);
     }
 
     // Called just before this Command runs the first time
@@ -19,7 +19,7 @@ public class ScrewDriveAtRest extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.bottomClaw.atRest();
+    	Robot.bottomClaw.moveOut();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -29,6 +29,7 @@ public class ScrewDriveAtRest extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.bottomClaw.screwDrive.set(0);
     }
 
     // Called when another command which requires one or more of the same

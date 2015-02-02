@@ -20,6 +20,8 @@ public class RobotMap {
 	public static double breakSpeed = 0.1; // How much to move the motor to keep
 											// the elevator from moving down for
 											// now
+	public boolean thomasIsStupid = true;
+	
 	public static double goDownResistance = 0;
 	
 	public static double joyDead = .15;

@@ -39,4 +39,9 @@ public class BottomClawPID extends PIDSubsystem {
     protected void usePIDOutput(double output) {
     	screwDrive.pidWrite(output);
     }
+    
+    public void resetEncoder(){
+    	screwEncoder.reset();
+    }
+
 }

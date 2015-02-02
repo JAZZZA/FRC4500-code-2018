@@ -9,8 +9,10 @@ import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveIn;
 import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveOut;
 import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
+import org.usfirst.frc.team4500.robot.commands.ResetShaftEncoder;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
+
 
 
 
@@ -42,7 +44,9 @@ public class OI {
 	public Button outButton = new JoystickButton(drivestick, 11);
 	public Button inButton = new JoystickButton(drivestick, 12);
 	Button gyroReset = new JoystickButton(drivestick, 9);
-	
+	Button encoderReset = new JoystickButton(drivestick, 10);
+	Button pidSetOpen = new JoystickButton(drivestick, 7);
+	Button pidSetClosed = new JoystickButton(drivestick, 8);
 	public OI() {
 		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
@@ -53,6 +57,10 @@ public class OI {
 		inButton.whenPressed(new MoveScrewDriveIn());
 		//inButton.whenReleased(new ScrewDriveAtRest());
 		//liftButton.whileHeld(new ElevatorMoveUp());
+		encoderReset.whenPressed(new ResetShaftEncoder());
+		pidSetOpen.whenPressed(new OpenBottomClaw());
+		pidSetClosed.whenPressed(new CloseBottomClaw());
+		
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics

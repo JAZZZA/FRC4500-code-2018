@@ -39,8 +39,8 @@ public class OI {
 	Button backwardButton = new JoystickButton(drivestick, 3);
 	Button forwardButton = new JoystickButton(drivestick, 5);
 	Button topClawButton = new JoystickButton(drivestick, 2);
-	public Button liftButton = new JoystickButton(drivestick, 4);
-	public Button lowerButton = new JoystickButton(drivestick, 6);
+	public Button liftButton = new JoystickButton(drivestick, 6);
+	public Button lowerButton = new JoystickButton(drivestick, 4);
 	public Button outButton = new JoystickButton(drivestick, 11);
 	public Button inButton = new JoystickButton(drivestick, 12);
 	Button gyroReset = new JoystickButton(drivestick, 9);

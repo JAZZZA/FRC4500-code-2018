@@ -26,11 +26,11 @@ public class BottomClawPID extends PIDSubsystem {
     public void initDefaultCommand() {}
     
     public void moveIn() {
-    	screwDrive.set(.5);
+    	screwDrive.set(1);
     }
     
     public void moveOut() {
-    	screwDrive.set(-.5);
+    	screwDrive.set(-1);
     }
     
     protected double returnPIDInput() {

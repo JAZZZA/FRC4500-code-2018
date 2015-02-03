@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4500.robot.commands;
 
-import java.awt.Robot;
+import org.usfirst.frc.team4500.robot.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
@@ -8,9 +10,7 @@ import java.awt.Robot;
 public class ChangeArduino extends Command {
 
     public ChangeArduino() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.arduino);
+        requires(Robot.arduino);
     }
 
     // Called just before this Command runs the first time

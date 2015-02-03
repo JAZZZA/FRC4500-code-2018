@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveUntilSonar extends Command {
 
-	double range;
-	double mySpeed;
+	double proximity;
+	double speed;
 
 	/**
 	 * Function drives robot forward at a specified speed until a specified
@@ -23,22 +23,23 @@ public class DriveUntilSonar extends Command {
 	 */
 	public DriveUntilSonar(double proximity, double speed) {
 		requires(Robot.drivetrain);
-		range = proximity;
-		mySpeed = speed;
+		this.proximity = proximity;
+		this.speed = speed;
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
+		Robot.drivetrain.intializeSonar();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Robot.drivetrain.driveForward(mySpeed);
+		Robot.drivetrain.driveForward(speed);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return Robot.drivetrain.isInRange(range);
+		return Robot.drivetrain.isInRange(proximity);
 	}
 
 	// Called once after isFinished returns true

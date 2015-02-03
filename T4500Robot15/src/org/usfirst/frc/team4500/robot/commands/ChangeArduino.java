@@ -1,18 +1,18 @@
 package org.usfirst.frc.team4500.robot.commands;
 
-import org.usfirst.frc.team4500.robot.Robot;
+import java.awt.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class Arduino extends Command {
+public class ChangeArduino extends Command {
 
-    public Arduino() {
+    public ChangeArduino() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.arduino);
+    	requires(Robot.Arduino);
     }
 
     // Called just before this Command runs the first time
@@ -21,12 +21,11 @@ public class Arduino extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.arduino.switchMode();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true

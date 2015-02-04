@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Arduino extends Subsystem {
-    SerialPort arduino = new SerialPort(9600, null, 0);
+    SerialPort arduino = new SerialPort(9600, Serial.kUSB or 1 idk ill make work soon!, 0);
     // Put methods for controlling this subsystem
     // here. Call these from Commands.  
 	

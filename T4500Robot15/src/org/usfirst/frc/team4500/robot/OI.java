@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4500.robot;
 
 
+import org.usfirst.frc.team4500.robot.commands.ChangeArduino;
 import org.usfirst.frc.team4500.robot.commands.PickupObject;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -25,9 +26,11 @@ public class OI {
 	Joystick drivestick = new Joystick(1);
 	Trigger mainTrigger = new JoystickButton(drivestick, 1);
 	Button pickUpBox = new JoystickButton(drivestick, 9);
+	Button changeState = new JoystickButton(drivestick, 11);
 	
 	public OI() {
-		pickUpBox.whenPressed(new PickupObject());
+		//pickUpBox.whenPressed(new PickupObject());
+		changeState.whenPressed(new ChangeArduino());
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics

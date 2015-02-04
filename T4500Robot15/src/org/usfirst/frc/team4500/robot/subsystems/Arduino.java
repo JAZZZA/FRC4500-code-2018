@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
 import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -8,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Arduino extends Subsystem {
-    SerialPort arduino = new SerialPort(9600, Serial.kUSB or 1 idk ill make work soon!, 0);
+    SerialPort arduino = new SerialPort(9600, Port.kUSB); //or 1 idk ill make work soon! Serial.kUSB
     // Put methods for controlling this subsystem
     // here. Call these from Commands.  
 	

@@ -53,12 +53,7 @@ public class RobotMap {
 								// speed
 			strafeTime = 5; // Dummy - Time to strafe left into the auto zone
 
-	public static double timeToMoveScrew = 0.5; // Dummy - CONNER - Find these
-												// values today if possible,
-												// it's the amount of time it
-												// takes to open/close the
-												// screwdrive claw in seconds
-
+	public static double timeToMoveScrew = 0.5; 
 	public static final int pneumaticsModule = 0;
 
 	// Winch PID stuffz

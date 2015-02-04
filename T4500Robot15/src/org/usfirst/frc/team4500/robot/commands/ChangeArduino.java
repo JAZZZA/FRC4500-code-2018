@@ -10,7 +10,9 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ChangeArduino extends Command {
 
     public ChangeArduino() {
-        requires(Robot.arduino);
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
+    	requires(Robot.arduino);
     }
 
     // Called just before this Command runs the first time

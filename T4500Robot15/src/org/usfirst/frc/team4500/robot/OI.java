@@ -34,32 +34,33 @@ public class OI {
 	
 	
 	Joystick drivestick = new Joystick(0);
-	//Joystick elevatorStick = new Joystick(0);
-	Trigger mainTrigger = new JoystickButton(drivestick, 1);
-	Button backwardButton = new JoystickButton(drivestick, 3);
-	Button forwardButton = new JoystickButton(drivestick, 5);
-	Button topClawButton = new JoystickButton(drivestick, 2);
-	public Button liftButton = new JoystickButton(drivestick, 6);
-	public Button lowerButton = new JoystickButton(drivestick, 4);
-	public Button outButton = new JoystickButton(drivestick, 11);
-	public Button inButton = new JoystickButton(drivestick, 12);
-	Button gyroReset = new JoystickButton(drivestick, 9);
-	Button encoderReset = new JoystickButton(drivestick, 10);
-	Button pidSetOpen = new JoystickButton(drivestick, 7);
-	Button pidSetClosed = new JoystickButton(drivestick, 8);
+	Joystick functionstick = new Joystick(1);
+	Trigger mainTrigger = new JoystickButton(functionstick, 1); 
+	Button backwardButton = new JoystickButton(drivestick, 8);
+	Button forwardButton = new JoystickButton(drivestick, 7);
+	//Button topClawButton = new JoystickButton(functionstick, 2);
+	public Button liftButton = new JoystickButton(functionstick, 3);
+	public Button lowerButton = new JoystickButton(functionstick, 2);
+	public Button outButton = new JoystickButton(functionstick, 5);
+	public Button inButton = new JoystickButton(functionstick, 4);
+	Button gyroReset = new JoystickButton(drivestick, 3);
+	//Button encoderReset = new JoystickButton(functionstick, 10);
+	//Button pidSetOpen = new JoystickButton(functionstick, 13); 
+	//Button pidSetClosed = new JoystickButton(functionstick, 14); 
+	
 	public OI() {
 		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
-		topClawButton.whenPressed(new ToggleTopClaw());
+		mainTrigger.whenActive(new ToggleTopClaw());
 		outButton.whenPressed(new MoveScrewDriveOut());
 		//outButton.whenReleased(new ScrewDriveAtRest());
 		inButton.whenPressed(new MoveScrewDriveIn());
 		//inButton.whenReleased(new ScrewDriveAtRest());
 		//liftButton.whileHeld(new ElevatorMoveUp());
-		encoderReset.whenPressed(new ResetShaftEncoder());
-		pidSetOpen.whenPressed(new OpenBottomClaw());
-		pidSetClosed.whenPressed(new CloseBottomClaw());
+		//encoderReset.whenPressed(new ResetShaftEncoder());
+		//pidSetOpen.whenPressed(new OpenBottomClaw());
+		//pidSetClosed.whenPressed(new CloseBottomClaw());
 		
 	}
 	

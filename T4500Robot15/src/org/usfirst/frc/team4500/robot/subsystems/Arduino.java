@@ -22,7 +22,11 @@ public class Arduino extends Subsystem {
     public void switchMode(int Mode) {
     	switch(Mode) {
     	case 1:
-    		arduino.writeString("Best Code Evaa");
+    		arduino.writeString("Autonomous");
+    	case 2:
+    		arduino.writeString("Teleop");
+    	case 3:
+    		arduino.writeString("Disabled");
     	}
     }
     

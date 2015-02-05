@@ -49,9 +49,9 @@ public class OI {
 	//Button pidSetClosed = new JoystickButton(functionstick, 14); 
 	
 	public OI() {
-		mainTrigger.whenPressed(new ArduinoMode1());
-		backwardButton.whenPressed(new ArduinoMode2());
-		forwardButton.whenPressed(new ArduinoMode3());
+		mainTrigger.whenPressed(new ArduinoChange1());
+		backwardButton.whenPressed(new ArduinoChange2());
+		forwardButton.whenPressed(new ArduinoChange3());
 		//gyroReset.whenPressed(new ResetGyro());
 		//backwardButton.whileHeld(new FullBackward());
 		//forwardButton.whileHeld(new FullForward());

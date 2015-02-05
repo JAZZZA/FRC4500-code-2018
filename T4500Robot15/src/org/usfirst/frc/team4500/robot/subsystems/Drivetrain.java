@@ -34,7 +34,7 @@ public class Drivetrain extends Subsystem {
 	}
 	
 	public double getSonarInches() {
-		return sonar.getVoltage()/0.009766;
+		return sonar.getAverageVoltage()/0.009766;
 	}
 	
 	public void resetGyro() {

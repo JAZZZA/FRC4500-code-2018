@@ -60,4 +60,48 @@ public class Drivetrain extends Subsystem {
     public void initDefaultCommand() {
     	setDefaultCommand (new DriveWithJoystick());
     }
+    
+    public void driveBack(double speed) {
+		drive.mecanumDrive_Cartesian(0, -speed, 0, 0);
+	}
+
+	public void stop() {
+		drive.mecanumDrive_Cartesian(0, 0, 0, 0);
+	}
+
+	/**
+	 * Drives robot forward at a specified speed
+	 * @param speed (0 to 1)
+	 */
+	public void driveForward(double speed) {
+		drive.mecanumDrive_Cartesian(0, speed, 0, 0);
+	}
+	
+	/**
+	 * 
+	 * @param range (in inches)
+	 * @return
+	 */
+	public boolean isInRange(double range) {
+		if (getSonarInches() < range) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * Makes the robot strafe at a given speed and direction
+	 * 
+	 * @param speed
+	 * @param direction
+	 *            : true = right, false = left.
+	 */
+	public void strafe(double speed, boolean direction) {
+		double dir;
+		if (direction)
+			dir = 1;
+		else
+			dir = -1;
+		drive.mecanumDrive_Cartesian(dir * speed, 0, 0, 0);
+	}
 }

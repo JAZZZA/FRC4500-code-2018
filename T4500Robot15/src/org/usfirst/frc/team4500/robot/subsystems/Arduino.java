@@ -1,7 +1,5 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
-import org.usfirst.frc.team4500.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.AnalogOutput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -9,8 +7,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Arduino extends Subsystem {
-    private boolean mode = false;
-    AnalogOutput arduino = new AnalogOutput(/*RobotMap.arduinoOutput*/4);
+    AnalogOutput arduino = new AnalogOutput(/*RobotMap.arduinoOutput*/3);
     //Serial.printLn (val)
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -35,6 +32,7 @@ public class Arduino extends Subsystem {
     		default:
     			arduino.setVoltage(0.0);
     	}
+    }
     
     public void sendSignal() {
     	

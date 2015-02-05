@@ -2,6 +2,7 @@
 package org.usfirst.frc.team4500.robot;
 
 import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
+import org.usfirst.frc.team4500.robot.subsystems.Arduino;
 import org.usfirst.frc.team4500.robot.subsystems.BottomClawPID;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
@@ -9,7 +10,6 @@ import org.usfirst.frc.team4500.robot.subsystems.NewElevator;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsDemo;
 import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;

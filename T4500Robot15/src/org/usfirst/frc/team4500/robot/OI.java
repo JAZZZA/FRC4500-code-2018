@@ -1,28 +1,17 @@
 package org.usfirst.frc.team4500.robot;
 
 
-import org.usfirst.frc.team4500.robot.commands.CloseBottomClaw;
-//import org.usfirst.frc.team4500.robot.commands.ElevatorMoveUp;
-import org.usfirst.frc.team4500.robot.commands.FullBackward;
-import org.usfirst.frc.team4500.robot.commands.FullForward;
-import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveIn;
-import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveOut;
-import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
-import org.usfirst.frc.team4500.robot.commands.ResetGyro;
-import org.usfirst.frc.team4500.robot.commands.ResetShaftEncoder;
-import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
-//import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
+import org.usfirst.frc.team4500.robot.commands.ArduinoChange1;
+import org.usfirst.frc.team4500.robot.commands.ArduinoChange2;
+import org.usfirst.frc.team4500.robot.commands.ArduinoChange3;
 
-
-
-
-
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import org.usfirst.frc.team4500.robot.commands.ElevatorMoveUp;
+//import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -49,7 +38,7 @@ public class OI {
 	//Button pidSetClosed = new JoystickButton(functionstick, 14); 
 	
 	public OI() {
-		mainTrigger.whenPressed(new ArduinoChange1());
+		mainTrigger.whenActive(new ArduinoChange1());
 		backwardButton.whenPressed(new ArduinoChange2());
 		forwardButton.whenPressed(new ArduinoChange3());
 		//gyroReset.whenPressed(new ResetGyro());

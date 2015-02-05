@@ -34,8 +34,9 @@ public class CorrectedGyro extends Gyro{
 	//TODO: find out if the correction works at all
 	
 	public double getAngle(){
+		
 		double time = t.get();
-		return super.getAngle() * correctionFactor - (0.0002024 * time * time + .1813 * time);	//subtract drift
+		return super.getAngle() * correctionFactor - (0.0002024 * time * time + .01813 * time);	//subtract drift
 	}
 	
 	public double getRate(){

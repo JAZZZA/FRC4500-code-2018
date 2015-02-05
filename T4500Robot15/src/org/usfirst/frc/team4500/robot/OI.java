@@ -2,6 +2,7 @@ package org.usfirst.frc.team4500.robot;
 
 
 //import org.usfirst.frc.team4500.robot.commands.ElevatorMoveUp;
+import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
 import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveIn;
@@ -9,6 +10,7 @@ import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveOut;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
+
 
 
 
@@ -43,8 +45,10 @@ public class OI {
 	//Button encoderReset = new JoystickButton(functionstick, 10);
 	//Button pidSetOpen = new JoystickButton(functionstick, 13); 
 	//Button pidSetClosed = new JoystickButton(functionstick, 14); 
+	Button SonarTest = new JoystickButton(drivestick, 9);
 	
 	public OI() {
+		SonarTest.whenPressed(new DriveUntilSonar(24, 0.5));
 		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());

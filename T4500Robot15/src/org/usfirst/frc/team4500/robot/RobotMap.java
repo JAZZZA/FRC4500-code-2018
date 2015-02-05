@@ -13,7 +13,7 @@ public class RobotMap {
 
 	public static int flmotorPort = 0, frmotorPort = 1, blmotorPort = 2,
 			brmotorPort = 3;
-	
+
 	public static int bottomClawClosed = 1495, bottomClawOpen = 0;
 
 	// Joystick deadzone values
@@ -21,9 +21,9 @@ public class RobotMap {
 											// the elevator from moving down for
 											// now
 	public boolean thomasIsStupid = true;
-	
+
 	public static double goDownResistance = 0;
-	
+
 	public static double joyDead = .15;
 
 	public static int screwdriveMotor = 5;
@@ -40,22 +40,30 @@ public class RobotMap {
 
 	public static int limitTop = 2;
 
-
-	//public static int limitBottom = 4;
+	// public static int limitBottom = 4;
 
 	public static final int openDemo = 0;
 
-	//public static int limitBottomClawO = 0;
+	// public static int limitBottomClawO = 0;
 
-	//public static int limitBottomClawC = 6;
+	// public static int limitBottomClawC = 6;
 
-	//public static int arduinoOutput = 0;
+	// public static int arduinoOutput = 0;
 
 	public static final int closeDemo = 1;
 
 	public static final int pneumaticsModule = 0;
 
 	public static final int TopClaw1 = 0, TopClaw2 = 1;
-	
-	
+
+	public static double sonarForwardSpeed = 0.1, // Dummy - Speed to move the
+			// robot forward during
+			// autonomous
+			sonar1 = 12, // Dummy - Distance to vision align with the box
+			sonar2 = 6, // Dummy - Distance to pickup box
+			strafeSpeed = 0.75,// Dummy - Speed to strafe into the auto zone,
+			// probably will ultimately be '1' for full
+			// speed
+			strafeTime = 5; // Dummy - Time to strafe left into the auto zone
+
 }

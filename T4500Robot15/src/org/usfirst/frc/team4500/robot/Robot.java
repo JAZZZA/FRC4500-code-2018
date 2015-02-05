@@ -33,6 +33,7 @@ public class Robot extends IterativeRobot {
     public static TopClaw topClaw;
     public static BottomClawPID bottomClaw;
     public static NewElevator newElevator;
+    public static Arduino arduino;
     /*DigitalInput limitTop;
     DigitalInput limitBottom;*/
     /**
@@ -48,6 +49,7 @@ public class Robot extends IterativeRobot {
 		pneumaticsDemo = new PneumaticsDemo();
 		topClaw = new TopClaw();
 		bottomClaw = new BottomClawPID();
+		arduino = new Arduino();
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
         newElevator = new NewElevator();

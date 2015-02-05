@@ -13,14 +13,16 @@ public class Autonomous extends CommandGroup {
 	Preferences prefs;
 	int mode;
 
+	/**
+	 * Mode 0 = Just our stuff,
+	 * Mode 1 = Our and one other team's stuff,
+	 * Mode 2 = Everybody's stuff,
+	 * Mode 3 = Just grab trash can and run
+	 */
 	public void chooseAuto() {
 		mode = prefs.getInt("Autonomous Mode # (0 to 3)", 0);
 	}
 
-	/*
-	 * Mode 0 = Just our stuff Mode 1 = Our and one other team's stuff Mode 2 =
-	 * Everybody's stuff Mode 3 = Just grab trash can and run
-	 */
 
 	public Autonomous() {
 

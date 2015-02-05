@@ -1,15 +1,12 @@
 package org.usfirst.frc.team4500.robot;
 
 
-import org.usfirst.frc.team4500.robot.commands.CloseBottomClaw;
 //import org.usfirst.frc.team4500.robot.commands.ElevatorMoveUp;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
 import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveIn;
 import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveOut;
-import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
-import org.usfirst.frc.team4500.robot.commands.ResetShaftEncoder;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 
@@ -17,7 +14,6 @@ import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 
 
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

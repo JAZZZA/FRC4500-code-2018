@@ -1,7 +1,5 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
-import org.usfirst.frc.team4500.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.AnalogOutput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 

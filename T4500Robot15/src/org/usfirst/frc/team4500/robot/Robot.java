@@ -9,7 +9,6 @@ import org.usfirst.frc.team4500.robot.subsystems.NewElevator;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsDemo;
 import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;

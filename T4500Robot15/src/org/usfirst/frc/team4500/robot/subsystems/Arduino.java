@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Arduino extends Subsystem {
     private boolean mode = false;
     AnalogOutput arduino = new AnalogOutput(/*RobotMap.arduinoOutput*/4);
+    //Serial.printLn (val)
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -20,18 +21,20 @@ public class Arduino extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public boolean switchMode() {
-    	if (mode) {
-    		mode = false;
-    		arduino.equals(mode);
-    		return mode;
+    public void switchMode(int mode) {
+    	switch (mode) {
+    		case 1:
+    			arduino.setVoltage(1.0);
+    			break;
+    		case 2:
+    			arduino.setVoltage(2.0);
+    			break;
+    		case 3:
+    			arduino.setVoltage(3.0);
+    			break;
+    		default:
+    			arduino.setVoltage(0.0);
     	}
-		else {
-			mode = true;
-			arduino.equals(mode);
-			return mode;
-		}
-    }
     
     public void sendSignal() {
     	

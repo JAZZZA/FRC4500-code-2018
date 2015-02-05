@@ -49,13 +49,16 @@ public class OI {
 	//Button pidSetClosed = new JoystickButton(functionstick, 14); 
 	
 	public OI() {
-		gyroReset.whenPressed(new ResetGyro());
-		backwardButton.whileHeld(new FullBackward());
-		forwardButton.whileHeld(new FullForward());
-		mainTrigger.whenActive(new ToggleTopClaw());
-		outButton.whenPressed(new MoveScrewDriveOut());
+		mainTrigger.whenPressed(new ArduinoMode1());
+		backwardButton.whenPressed(new ArduinoMode2());
+		forwardButton.whenPressed(new ArduinoMode3());
+		//gyroReset.whenPressed(new ResetGyro());
+		//backwardButton.whileHeld(new FullBackward());
+		//forwardButton.whileHeld(new FullForward());
+		//mainTrigger.whenActive(new ToggleTopClaw());
+		//outButton.whenPressed(new MoveScrewDriveOut());
 		//outButton.whenReleased(new ScrewDriveAtRest());
-		inButton.whenPressed(new MoveScrewDriveIn());
+		//inButton.whenPressed(new MoveScrewDriveIn());
 		//inButton.whenReleased(new ScrewDriveAtRest());
 		//liftButton.whileHeld(new ElevatorMoveUp());
 		//encoderReset.whenPressed(new ResetShaftEncoder());

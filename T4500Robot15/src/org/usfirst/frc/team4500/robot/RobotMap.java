@@ -14,7 +14,7 @@ public class RobotMap {
 	public static int flmotorPort = 0, frmotorPort = 1, blmotorPort = 2,
 			brmotorPort = 3;
 
-	public static int bottomClawClosed = 1495, bottomClawOpen = 0;
+	public static final int bottomCl1 = 2, bottomCl2 = 3;
 
 	// Joystick deadzone values
 	public static double breakSpeed = 0.1; // How much to move the motor to keep
@@ -43,10 +43,6 @@ public class RobotMap {
 	// public static int limitBottom = 4;
 
 	public static final int openDemo = 0;
-
-	// public static int limitBottomClawO = 0;
-
-	// public static int limitBottomClawC = 6;
 
 	// public static int arduinoOutput = 0;
 

@@ -46,7 +46,6 @@ public class Drivetrain extends Subsystem {
 	}
 	
 	public void driveWithJoystick(double x, double y, double rotation) {
-		SmartDashboard.putNumber("Encoder", Robot.bottomClaw.screwEncoder.get());
 		SmartDashboard.putNumber("Gyro Angle", getAngle());
 		SmartDashboard.putNumber("Ultrasonic distance", getSonarInches());
 		drive.mecanumDrive_Cartesian(x, y, rotation,  getAngle());

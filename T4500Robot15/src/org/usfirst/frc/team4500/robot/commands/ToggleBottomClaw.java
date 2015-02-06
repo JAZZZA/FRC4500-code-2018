@@ -1,34 +1,27 @@
 package org.usfirst.frc.team4500.robot.commands;
 
-import org.usfirst.frc.team4500.robot.Robot;
-import org.usfirst.frc.team4500.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class CloseBottomClaw extends Command {
+public class ToggleBottomClaw extends Command {
 
-    public CloseBottomClaw() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.bottomClaw);
+    public ToggleBottomClaw() {
+
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.bottomClaw.enable();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.bottomClaw.setSetpoint(RobotMap.bottomClawClosed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;//Robot.oi.innerLimit.get(); //changed from true
+        return false;
     }
 
     // Called once after isFinished returns true

@@ -2,7 +2,7 @@
 package org.usfirst.frc.team4500.robot;
 
 import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
-import org.usfirst.frc.team4500.robot.subsystems.BottomClawPID;
+import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team4500.robot.subsystems.NewElevator;
@@ -30,8 +30,8 @@ public class Robot extends IterativeRobot {
     public static Drivetrain drivetrain;
     public static PneumaticsDemo pneumaticsDemo;
     public static TopClaw topClaw;
-    public static BottomClawPID bottomClaw;
     public static NewElevator newElevator;
+    public static BottomClaw bottomClaw;
     /*DigitalInput limitTop;
     DigitalInput limitBottom;*/
     /**
@@ -46,10 +46,10 @@ public class Robot extends IterativeRobot {
 		drivetrain.invertDriveMotors();
 		pneumaticsDemo = new PneumaticsDemo();
 		topClaw = new TopClaw();
-		bottomClaw = new BottomClawPID();
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
         newElevator = new NewElevator();
+        bottomClaw = new BottomClaw();
         oi = new OI();
     }
 	

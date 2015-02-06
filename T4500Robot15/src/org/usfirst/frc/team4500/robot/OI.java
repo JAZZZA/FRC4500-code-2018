@@ -5,11 +5,11 @@ package org.usfirst.frc.team4500.robot;
 import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
-import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveIn;
-import org.usfirst.frc.team4500.robot.commands.MoveScrewDriveOut;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
+import org.usfirst.frc.team4500.robot.commands.ToggleBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
+
 
 
 
@@ -27,25 +27,18 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	//public DigitalInput outerLimit = new DigitalInput(RobotMap.limitBottomClawO);
-	//public DigitalInput innerLimit = new DigitalInput(RobotMap.limitBottomClawC);
-	
-	
 	Joystick drivestick = new Joystick(0);
 	Joystick functionstick = new Joystick(1);
 	Trigger mainTrigger = new JoystickButton(functionstick, 1); 
 	Button backwardButton = new JoystickButton(drivestick, 8);
 	Button forwardButton = new JoystickButton(drivestick, 7);
-	//Button topClawButton = new JoystickButton(functionstick, 2);
 	public Button liftButton = new JoystickButton(functionstick, 3);
 	public Button lowerButton = new JoystickButton(functionstick, 2);
 	public Button outButton = new JoystickButton(functionstick, 5);
 	public Button inButton = new JoystickButton(functionstick, 4);
 	Button gyroReset = new JoystickButton(drivestick, 3);
-	//Button encoderReset = new JoystickButton(functionstick, 10);
-	//Button pidSetOpen = new JoystickButton(functionstick, 13); 
-	//Button pidSetClosed = new JoystickButton(functionstick, 14); 
 	Button SonarTest = new JoystickButton(drivestick, 9);
+	Button topClaw = new JoystickButton(functionstick, 10);
 	
 	public OI() {
 		SonarTest.whenPressed(new DriveUntilSonar(24, 0.5));
@@ -53,9 +46,8 @@ public class OI {
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
 		mainTrigger.whenActive(new ToggleTopClaw());
-		outButton.whenPressed(new MoveScrewDriveOut());
+		topClaw.whenPressed(new ToggleBottomClaw());
 		//outButton.whenReleased(new ScrewDriveAtRest());
-		inButton.whenPressed(new MoveScrewDriveIn());
 		//inButton.whenReleased(new ScrewDriveAtRest());
 		//liftButton.whileHeld(new ElevatorMoveUp());
 		//encoderReset.whenPressed(new ResetShaftEncoder());

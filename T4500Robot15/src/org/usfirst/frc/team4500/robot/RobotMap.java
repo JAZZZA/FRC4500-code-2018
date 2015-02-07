@@ -24,7 +24,8 @@ public class RobotMap {
 	public static double goDownResistance = 0;
 
 	public static double joyDead = .15;
-	public static double twistDeat = .3;
+	public static double twistDead = .3;
+	
 	public static int screwdriveMotor = 5;
 
 	public static int screwDriveEncoder1 = 0;

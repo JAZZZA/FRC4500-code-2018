@@ -34,11 +34,11 @@ public class OI {
 	Button forwardButton = new JoystickButton(drivestick, 7);
 	public Button liftButton = new JoystickButton(functionstick, 3);
 	public Button lowerButton = new JoystickButton(functionstick, 2);
-	public Button outButton = new JoystickButton(functionstick, 5);
-	public Button inButton = new JoystickButton(functionstick, 4);
+	/*public Button outButton = new JoystickButton(functionstick, 5);
+	public Button inButton = new JoystickButton(functionstick, 4);*/
 	Button gyroReset = new JoystickButton(drivestick, 3);
 	Button SonarTest = new JoystickButton(drivestick, 9);
-	Button topClaw = new JoystickButton(functionstick, 10);
+	Button topClaw = new JoystickButton(functionstick, 4);
 	
 	public OI() {
 		SonarTest.whenPressed(new DriveUntilSonar(24, 0.5));

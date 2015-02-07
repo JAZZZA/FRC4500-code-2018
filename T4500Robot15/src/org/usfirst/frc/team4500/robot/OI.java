@@ -73,7 +73,7 @@ public class OI {
 	}
 	
 	public double getTwist() {
-		double x = Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
+		double x = Math.abs(drivestick.getTwist()) > RobotMap.twistDead ? drivestick.getTwist() : 0;
 		return RobotMap.motorPower*x;
 	}
 	

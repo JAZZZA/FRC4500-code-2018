@@ -33,11 +33,9 @@ public class Autonomous extends CommandGroup {
 					RobotMap.strafeSpeed)); // Strafe to auto
 		}
 		if (mode != 3) {
-			addSequential(new DriveUntilSonar(RobotMap.sonar1,
-					RobotMap.sonarForwardSpeed));
+			addSequential(new DriveUntilSonar(RobotMap.sonar1));
 			// TODO: Vision Alignment Command (sequential)
-			addSequential(new DriveUntilSonar(RobotMap.sonar2,
-					RobotMap.sonarForwardSpeed)); // Positioned to pick up tote
+			addSequential(new DriveUntilSonar(RobotMap.sonar2)); // Positioned to pick up tote
 													// 1
 
 			if (mode == 0) {
@@ -49,14 +47,12 @@ public class Autonomous extends CommandGroup {
 			if (mode != 0) {
 
 				addParallel(new PickupObject());
-				addParallel(new DriveUntilSonar(RobotMap.sonar1,
-						RobotMap.sonarForwardSpeed)); // Tote picked up and
+				addParallel(new DriveUntilSonar(RobotMap.sonar1)); // Tote picked up and
 														// robot moves to next
 														// tote
 
 				// 	Vision Alignment Command (sequential)
-				addSequential(new DriveUntilSonar(RobotMap.sonar2,
-						RobotMap.sonarForwardSpeed)); // In position to pick up
+				addSequential(new DriveUntilSonar(RobotMap.sonar2)); // In position to pick up
 														// tote 2
 
 				if (mode == 1) {
@@ -69,12 +65,10 @@ public class Autonomous extends CommandGroup {
 				if (mode != 1) {
 
 					addParallel(new PickupObject());
-					addParallel(new DriveUntilSonar(RobotMap.sonar1,
-							RobotMap.sonarForwardSpeed)); // Pick up tote 2 and drive forward
+					addParallel(new DriveUntilSonar(RobotMap.sonar1)); // Pick up tote 2 and drive forward
 
 					// Vision Alignment Command (sequential)
-					addSequential(new DriveUntilSonar(RobotMap.sonar2,
-							RobotMap.sonarForwardSpeed)); // Align to tote 3
+					addSequential(new DriveUntilSonar(RobotMap.sonar2)); // Align to tote 3
 
 					addParallel(new PickupObject());
 					addParallel(new StrafeForSeconds(RobotMap.strafeTime,

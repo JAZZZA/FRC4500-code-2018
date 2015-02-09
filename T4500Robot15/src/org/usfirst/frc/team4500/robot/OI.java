@@ -2,12 +2,22 @@ package org.usfirst.frc.team4500.robot;
 
 
 //import org.usfirst.frc.team4500.robot.commands.ElevatorMoveUp;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+
 import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
 import org.usfirst.frc.team4500.robot.commands.ToggleBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
+
+
+
+
+
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -33,6 +43,10 @@ public class OI {
 	Button SonarTest = new JoystickButton(drivestick, 9);
 	Button topClaw = new JoystickButton(functionstick, 4);
 	
+	Socket imageProcessingComputer;
+	InputStream imageProcessingInput;
+	OutputStream imageProcessingOutput;
+	
 	public OI() {
 		SonarTest.whenPressed(new DriveUntilSonar(24, .5));
 		gyroReset.whenPressed(new ResetGyro());
@@ -47,6 +61,18 @@ public class OI {
 		//pidSetOpen.whenPressed(new OpenBottomClaw());
 		//pidSetClosed.whenPressed(new CloseBottomClaw());
 		
+		try {
+			imageProcessingComputer = new Socket(RobotMap.imageProcessingIP, 1234);
+			imageProcessingInput = imageProcessingComputer.getInputStream();
+			imageProcessingOutput = imageProcessingComputer.getOutputStream();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			SmartDashboard.putString("Error", "Cannot connect to computer");
+		}
+		
+		
 	}
 	
 	//Made the joystick always return 0 for now so we can test the pneumatics
@@ -58,6 +84,25 @@ public class OI {
 	
 	public double getElevator() {
 		return drivestick.getThrottle();
+	}
+	
+	public double getCenter(){
+		try {
+			imageProcessingOutput.write("1".getBytes());
+			byte[] b = new byte[111];
+			int read = imageProcessingInput.read(b, 0, 100);
+			@SuppressWarnings("deprecation")
+			double d = Double.parseDouble(new String(b, read));
+			
+			SmartDashboard.putNumber("Center", d);
+			return d;
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		return -1;
 	}
 	
 	public double getY() {

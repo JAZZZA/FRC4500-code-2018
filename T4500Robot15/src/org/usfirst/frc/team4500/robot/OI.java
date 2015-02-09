@@ -9,13 +9,6 @@ import org.usfirst.frc.team4500.robot.commands.ResetGyro;
 import org.usfirst.frc.team4500.robot.commands.ToggleBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
-
-
-
-
-
-
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -41,7 +34,7 @@ public class OI {
 	Button topClaw = new JoystickButton(functionstick, 4);
 	
 	public OI() {
-		SonarTest.whenPressed(new DriveUntilSonar(24, 0.5));
+		SonarTest.whenPressed(new DriveUntilSonar(24));
 		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
@@ -73,7 +66,7 @@ public class OI {
 	}
 	
 	public double getTwist() {
-		double x = Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
+		double x = Math.abs(drivestick.getTwist()) > RobotMap.twistDead ? drivestick.getTwist() : 0;
 		return RobotMap.motorPower*x;
 	}
 	

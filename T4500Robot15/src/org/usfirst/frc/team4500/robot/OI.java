@@ -34,7 +34,7 @@ public class OI {
 	Button topClaw = new JoystickButton(functionstick, 4);
 	
 	public OI() {
-		SonarTest.whenPressed(new DriveUntilSonar(24));
+		SonarTest.whenPressed(new DriveUntilSonar(24, .5));
 		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());

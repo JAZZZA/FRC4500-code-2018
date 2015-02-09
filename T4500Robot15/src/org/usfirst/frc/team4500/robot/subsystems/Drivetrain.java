@@ -1,8 +1,11 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
+import java.util.Arrays;
+
 import org.usfirst.frc.team4500.robot.Robot;
 import org.usfirst.frc.team4500.robot.RobotMap;
 import org.usfirst.frc.team4500.robot.commands.DriveWithJoystick;
+
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -34,7 +37,29 @@ public class Drivetrain extends Subsystem {
 		sonar.setOversampleBits(4);
 	}
 
+	int tick = 0;
+	int sampleSize = 10;
+	double[] sample;
+	double median;
+
 	public double getSonarInches() {
+		sample[tick] = getRawSonarInches();
+
+		if (tick == sampleSize) {
+			Arrays.sort(sample);
+			median = sample[sampleSize/2];
+		}
+
+		if (tick == sampleSize) {
+			tick = 0;
+		} else {
+			tick++;
+		}
+
+		return median;
+	}
+
+	public double getRawSonarInches() {
 		return sonar.getAverageVoltage() / 0.009766;
 	}
 
@@ -88,7 +113,7 @@ public class Drivetrain extends Subsystem {
 	 * Takes the gyro value the first time it is called, and uses that as a
 	 * correct orientation, and tries to keep the robot facing that direction as
 	 * it drives in a straight line. NOTE: Call 'ResetFirstRun()' each time you
-	 * finish running this function
+	 * finish running this function to reset correctAngle
 	 * 
 	 * @param speed
 	 *            : Speed to drive in line
@@ -122,7 +147,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	/**
-	 * Call this each time you finish using driveStraight
+	 * Call this each time you finish using driveStraight to reset correctAngle
 	 */
 	public void ResetFirstRun() {
 		firstRun = true;

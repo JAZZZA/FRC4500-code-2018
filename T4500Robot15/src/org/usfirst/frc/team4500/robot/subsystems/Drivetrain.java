@@ -31,6 +31,7 @@ public class Drivetrain extends Subsystem {
 		gyroscope.setSensitivity(7.850195562631942);
 		gyroscope.initGyro();
 		gyroscope.reset();
+		sonar.setOversampleBits(4);
 	}
 
 	public double getSonarInches() {

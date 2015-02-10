@@ -10,12 +10,22 @@ import java.net.Socket;
 import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
+import org.usfirst.frc.team4500.robot.commands.Lift;
+import org.usfirst.frc.team4500.robot.commands.Lower;
+import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
+import org.usfirst.frc.team4500.robot.commands.OpenClaws;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
 import org.usfirst.frc.team4500.robot.commands.ToggleBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 
 
 
+
+
+
+
+
+import org.usfirst.frc.team4500.robot.commands.Turn90Degrees;
 
 
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
@@ -42,6 +52,11 @@ public class OI {
 	Button gyroReset = new JoystickButton(drivestick, 3);
 	Button SonarTest = new JoystickButton(drivestick, 9);
 	Button topClaw = new JoystickButton(functionstick, 4);
+	Button openClaws = new JoystickButton(functionstick,6); //Functionstick Auto Trials
+	Button autoLift = new JoystickButton(functionstick, 7);
+	Button autoLower = new JoystickButton(functionstick, 8);
+	Button turn90 = new JoystickButton(functionstick, 9);
+	Button openBot = new JoystickButton(functionstick, 10); //Functionstick Auto Trials
 	
 	Socket imageProcessingComputer;
 	InputStream imageProcessingInput;
@@ -60,6 +75,11 @@ public class OI {
 		//encoderReset.whenPressed(new ResetShaftEncoder());
 		//pidSetOpen.whenPressed(new OpenBottomClaw());
 		//pidSetClosed.whenPressed(new CloseBottomClaw());
+		openClaws.whenPressed(new OpenClaws()); //Functionstick Auto Trials
+		autoLift.whenPressed(new Lift());
+		autoLower.whenPressed(new Lower());
+		turn90.whenPressed(new Turn90Degrees());
+		openBot.whenPressed(new OpenBottomClaw()); //Functionstick Auto Trials
 		
 		try {
 			imageProcessingComputer = new Socket(RobotMap.imageProcessingIP, 1234);

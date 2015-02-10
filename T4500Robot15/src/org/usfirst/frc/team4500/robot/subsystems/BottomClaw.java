@@ -27,5 +27,10 @@ public class BottomClaw extends Subsystem {
     		actuator.set(DoubleSolenoid.Value.kForward);  		
     	}
     }
+
+    public void openBotClaw() {
+    	actuator.set(DoubleSolenoid.Value.kForward);
+    }
+
 }
 

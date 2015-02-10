@@ -27,5 +27,11 @@ public class TopClaw extends Subsystem {
     		actuOne.set(DoubleSolenoid.Value.kForward);  		
     	}
     }
+
+    public void openClaw() {
+    	actuOne.set(DoubleSolenoid.Value.kForward);
+    }
+
 }
+
 

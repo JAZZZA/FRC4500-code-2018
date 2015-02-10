@@ -37,6 +37,10 @@ public class Drivetrain extends Subsystem {
 		sonar.setOversampleBits(4);
 	}
 
+	public void initDefaultCommand() {
+		setDefaultCommand(new DriveWithJoystick());
+	}
+
 	int tick = 0;
 	int sampleSize = 10;
 	double[] sample;
@@ -47,7 +51,7 @@ public class Drivetrain extends Subsystem {
 
 		if (tick == sampleSize) {
 			Arrays.sort(sample);
-			median = sample[sampleSize/2];
+			median = sample[sampleSize / 2];
 		}
 
 		if (tick == sampleSize) {
@@ -80,10 +84,6 @@ public class Drivetrain extends Subsystem {
 	public void invertDriveMotors() {
 		drive.setInvertedMotor(MotorType.kFrontRight, true);
 		drive.setInvertedMotor(MotorType.kRearRight, true);
-	}
-
-	public void initDefaultCommand() {
-		setDefaultCommand(new DriveWithJoystick());
 	}
 
 	public void driveBack(double speed) {
@@ -122,7 +122,7 @@ public class Drivetrain extends Subsystem {
 	 * @param RoboDrive
 	 *            : RobotDrive object to drive with
 	 */
-	public void driveStraight(double speed, Gyro gy, RobotDrive RoboDrive) {
+	public void driveStraight(double speed, Gyro gy, RobotDrive roboDrive) {
 		if (firstRun) {
 			correctAngle = gy.getAngle();
 			firstRun = false;
@@ -134,7 +134,7 @@ public class Drivetrain extends Subsystem {
 										// strayed 10 degrees off course, it
 										// would hit the maximum correction rate
 										// of z = 1.
-		RoboDrive.mecanumDrive_Cartesian(0, speed, correction, 0);
+		roboDrive.mecanumDrive_Cartesian(0, speed, correction, 0);
 
 		// Fallback code if the ratio stuff doesn't work out:
 		/*
@@ -151,6 +151,23 @@ public class Drivetrain extends Subsystem {
 	 */
 	public void ResetFirstRun() {
 		firstRun = true;
+	}
+
+	public void turnDegrees(double angle, double speed, Gyro gy,
+			RobotDrive roboDrive) {
+		double initialAngle = gy.getAngle();
+		double destinationAngle = initialAngle + angle;
+
+		if (angle > 0) {
+			while (gy.getAngle() < destinationAngle) {
+				roboDrive.mecanumDrive_Cartesian(0, 0, speed, 0);
+			}
+		}
+		if (angle < 0) {
+			while (gy.getAngle() > destinationAngle) {
+				roboDrive.mecanumDrive_Cartesian(0, 0, -speed, 0);
+			}
+		}
 	}
 
 	/**

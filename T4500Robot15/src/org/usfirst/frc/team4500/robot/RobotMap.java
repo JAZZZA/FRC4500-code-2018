@@ -65,7 +65,6 @@ public class RobotMap {
 	public static double autoTurnSpeed = 0.5;// Dummy
 
 	public static double twistDead = 0.3;
-
 	
 	public static String imageProcessingIP = "10.45.0.100";
 

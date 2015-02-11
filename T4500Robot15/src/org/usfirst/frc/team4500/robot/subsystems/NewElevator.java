@@ -17,5 +17,6 @@ public class NewElevator extends Subsystem {
     	//if (Robot.oi.getTrigger());
         //winchmotor.set(.25);
     }
+    
 }
 

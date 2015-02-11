@@ -2,6 +2,7 @@
 package org.usfirst.frc.team4500.robot;
 
 import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
+import org.usfirst.frc.team4500.robot.commands.FullAuto;
 import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
@@ -59,6 +60,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
+    	autonomousCommand = new FullAuto();
         if (autonomousCommand != null) autonomousCommand.start();
     }
 

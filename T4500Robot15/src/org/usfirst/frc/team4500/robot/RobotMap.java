@@ -20,8 +20,6 @@ public class RobotMap {
 	public static double breakSpeed = 0.1; // How much to move the motor to keep
 											// the elevator from moving down for
 											// now
-	public boolean thomasIsStupid = true;
-
 	public static double goDownResistance = 0;
 
 	public static double joyDead = .15;
@@ -52,10 +50,12 @@ public class RobotMap {
 
 	public static final int TopClaw1 = 0, TopClaw2 = 1;
 
-	public static double sonarForwardSpeed = 0.1, // Dummy - Speed to move the
+	public static double sonarForwardSpeed = 1, // Dummy - Speed to move the
 			// robot forward during
 			// autonomous
-			sonar1 = 12, // Dummy - Distance to vision align with the box
+			sonar1 = 7, // Dummy - Distance to vision align with the box
+			
+			//OLD STUFF:
 			sonar2 = 6, // Dummy - Distance to pickup box
 			strafeSpeed = 0.75,// Dummy - Speed to strafe into the auto zone,
 			// probably will ultimately be '1' for full

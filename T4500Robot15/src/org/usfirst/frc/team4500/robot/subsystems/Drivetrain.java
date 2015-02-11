@@ -48,7 +48,7 @@ public class Drivetrain extends Subsystem {
 	double median;
 
 	public double getSonarInches() {
-		sample[tick] = getRawSonarInches();
+		/*sample[tick] = getRawSonarInches();
 
 		if (tick == sampleSize) {
 			Arrays.sort(sample);
@@ -59,12 +59,13 @@ public class Drivetrain extends Subsystem {
 			tick = 0;
 		} else {
 			tick++;
-		}
+		}*/
 
-		return median;
+		return getRawSonarInches();
 	}
 
 	public double getRawSonarInches() {
+		SmartDashboard.putNumber("Sonar", sonar.getAverageVoltage()/0.009766);
 		return sonar.getAverageVoltage() / 0.009766;
 	}
 

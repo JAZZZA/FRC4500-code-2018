@@ -19,7 +19,7 @@ public class Turn90Degrees extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.turnDegrees(90, RobotMap.autoTurnSpeed, Robot.drivetrain.gyroscope, Robot.drivetrain.drive);
+    	Robot.drivetrain.turnDegrees(55, RobotMap.autoTurnSpeed, Robot.drivetrain.gyroscope, Robot.drivetrain.drive);
     }
 
     // Make this return true when this Command no longer needs to run execute()

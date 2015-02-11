@@ -43,7 +43,7 @@ public class Drivetrain extends Subsystem {
 
 	int tick = 0;
 	int sampleSize = 10;
-	double[] sample;
+	double[] sample = new double[sampleSize+1];
 	double median;
 
 	public double getSonarInches() {

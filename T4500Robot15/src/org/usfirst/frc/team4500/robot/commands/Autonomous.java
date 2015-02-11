@@ -27,7 +27,7 @@ public class Autonomous extends CommandGroup {
 	public Autonomous() {
 
 		addSequential(new ToggleTopClaw());
-		addSequential(new PickupObject()); // Recycle bin is picked up.
+		//addSequential(new PickupObject()); // Recycle bin is picked up.
 		if (mode == 3) {
 			addParallel(new StrafeForSeconds(RobotMap.strafeTime, false,
 					RobotMap.strafeSpeed)); // Strafe to auto
@@ -41,14 +41,14 @@ public class Autonomous extends CommandGroup {
 													// 1
 
 			if (mode == 0) {
-				addParallel(new PickupObject());
+				//addParallel(new PickupObject());
 				addParallel(new StrafeForSeconds(RobotMap.strafeTime, false,
 						RobotMap.strafeSpeed)); // Pick up tote and run
 			}
 
 			if (mode != 0) {
 
-				addParallel(new PickupObject());
+				//addParallel(new PickupObject());
 				addParallel(new DriveUntilSonar(RobotMap.sonar1,
 						RobotMap.sonarForwardSpeed)); // Tote picked up and
 														// robot moves to next
@@ -60,7 +60,7 @@ public class Autonomous extends CommandGroup {
 														// tote 2
 
 				if (mode == 1) {
-					addParallel(new PickupObject());
+					//addParallel(new PickupObject());
 					addParallel(new StrafeForSeconds(RobotMap.strafeTime,
 							false, RobotMap.strafeSpeed)); // Pick up tote 2 and
 															// run
@@ -68,7 +68,7 @@ public class Autonomous extends CommandGroup {
 
 				if (mode != 1) {
 
-					addParallel(new PickupObject());
+					//addParallel(new PickupObject());
 					addParallel(new DriveUntilSonar(RobotMap.sonar1,
 							RobotMap.sonarForwardSpeed)); // Pick up tote 2 and drive forward
 
@@ -76,7 +76,7 @@ public class Autonomous extends CommandGroup {
 					addSequential(new DriveUntilSonar(RobotMap.sonar2,
 							RobotMap.sonarForwardSpeed)); // Align to tote 3
 
-					addParallel(new PickupObject());
+					//addParallel(new PickupObject());
 					addParallel(new StrafeForSeconds(RobotMap.strafeTime,
 							false, RobotMap.strafeSpeed)); // Pick up tote 3 and run
 

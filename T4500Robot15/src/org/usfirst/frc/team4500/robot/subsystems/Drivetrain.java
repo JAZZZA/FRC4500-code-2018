@@ -35,6 +35,7 @@ public class Drivetrain extends Subsystem {
 		gyroscope.initGyro();
 		gyroscope.reset();
 		sonar.setOversampleBits(4);
+		sonar.setAverageBits(4);
 	}
 
 	public void initDefaultCommand() {

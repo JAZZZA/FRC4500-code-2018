@@ -42,7 +42,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	int tick = 0;
-	int sampleSize = 10;
+	int sampleSize = 25;
 	double[] sample = new double[sampleSize+1];
 	double median;
 

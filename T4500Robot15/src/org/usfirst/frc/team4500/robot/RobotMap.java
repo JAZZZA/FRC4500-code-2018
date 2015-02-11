@@ -50,10 +50,10 @@ public class RobotMap {
 
 	public static final int TopClaw1 = 0, TopClaw2 = 1;
 
-	public static double sonarForwardSpeed = 1, // Dummy - Speed to move the
+	public static double sonarForwardSpeed = .25, // Dummy - Speed to move the
 			// robot forward during
 			// autonomous
-			sonar1 = 7, // Dummy - Distance to vision align with the box
+			sonar1 = 14, // Dummy - Distance to vision align with the box
 			
 			//OLD STUFF:
 			sonar2 = 6, // Dummy - Distance to pickup box
@@ -68,7 +68,7 @@ public class RobotMap {
 	
 	public static String imageProcessingIP = "10.45.0.100";
 
-	public static double liftTime = 1; //Time in milliseconds, Dummy Value
+	public static double liftTime = 1.5; //Time in seconds, Dummy Value
 	
-	public static double lowerTime = 1; //Time in milliseconds, Dummy Value
+	public static double lowerTime = 2; //Time in seconds, Dummy Value
 }

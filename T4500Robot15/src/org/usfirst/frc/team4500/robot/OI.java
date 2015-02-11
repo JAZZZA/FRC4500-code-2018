@@ -10,6 +10,7 @@ import java.net.Socket;
 import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
+import org.usfirst.frc.team4500.robot.commands.GrabTrashCan;
 import org.usfirst.frc.team4500.robot.commands.Lift;
 import org.usfirst.frc.team4500.robot.commands.Lower;
 import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
@@ -26,6 +27,7 @@ import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 
 
 import org.usfirst.frc.team4500.robot.commands.Turn90Degrees;
+
 
 
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
@@ -57,13 +59,14 @@ public class OI {
 	Button autoLower = new JoystickButton(functionstick, 8);
 	Button turn90 = new JoystickButton(functionstick, 9);
 	Button openBot = new JoystickButton(functionstick, 10); //Functionstick Auto Trials
+	Button closeTopClaw = new JoystickButton(functionstick, 11);
 	
 	Socket imageProcessingComputer;
 	InputStream imageProcessingInput;
 	OutputStream imageProcessingOutput;
 	
 	public OI() {
-		SonarTest.whenPressed(new DriveUntilSonar(24, .5));
+		SonarTest.whenPressed(new DriveUntilSonar(14, .5));
 		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
@@ -80,6 +83,7 @@ public class OI {
 		autoLower.whenPressed(new Lower());
 		turn90.whenPressed(new Turn90Degrees());
 		openBot.whenPressed(new OpenBottomClaw()); //Functionstick Auto Trials
+		closeTopClaw.whenPressed(new GrabTrashCan());
 		
 		try {
 			imageProcessingComputer = new Socket(RobotMap.imageProcessingIP, 1234);

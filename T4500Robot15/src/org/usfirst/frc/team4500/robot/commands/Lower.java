@@ -27,7 +27,7 @@ public class Lower extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.newElevator.winchmotor.set(-.75); //Auto-Lower set to half speed
+    	Robot.newElevator.winchmotor.set(-.5); //Auto-Lower set to half speed
 
     }
 

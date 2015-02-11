@@ -24,7 +24,7 @@ public class Lift extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.newElevator.winchmotor.set(1); //Auto-Lift set to half speed 	 
+    	Robot.newElevator.winchmotor.set(.5); //Auto-Lift set to half speed 	 
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -33,7 +33,7 @@ public class DriveUntilSonar extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Robot.drivetrain.driveStraight(speed, Robot.drivetrain.gyroscope,
+		Robot.drivetrain.driveStraight(-speed, Robot.drivetrain.gyroscope,
 				Robot.drivetrain.drive);
 	}
 

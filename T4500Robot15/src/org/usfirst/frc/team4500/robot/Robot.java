@@ -3,6 +3,7 @@ package org.usfirst.frc.team4500.robot;
 
 import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4500.robot.commands.FullAuto;
+import org.usfirst.frc.team4500.robot.subsystems.BackClaw;
 import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
@@ -33,6 +34,7 @@ public class Robot extends IterativeRobot {
     public static TopClaw topClaw;
     public static NewElevator newElevator;
     public static BottomClaw bottomClaw;
+    public static BackClaw backClaw;
     /*DigitalInput limitTop;
     DigitalInput limitBottom;*/
     /**
@@ -52,6 +54,7 @@ public class Robot extends IterativeRobot {
         newElevator = new NewElevator();
         bottomClaw = new BottomClaw();
         oi = new OI();
+        backClaw = new BackClaw();
     }
 	
 	public void disabledPeriodic() {

@@ -72,4 +72,6 @@ public class RobotMap {
 	
 	public static double lowerTime = 2; //Time in seconds, Dummy Value
 
+	public static int backClawMotor = 7;
+
 }

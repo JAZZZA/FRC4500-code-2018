@@ -71,4 +71,5 @@ public class RobotMap {
 	public static double liftTime = 1.5; //Time in seconds, Dummy Value
 	
 	public static double lowerTime = 2; //Time in seconds, Dummy Value
+
 }

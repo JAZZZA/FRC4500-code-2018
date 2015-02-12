@@ -8,6 +8,8 @@ package org.usfirst.frc.team4500.robot;
  */
 public class RobotMap {
 
+	public boolean mattDaemonFixed = false;
+	
 	// Motor Ports
 	public static double motorPower = .75;
 

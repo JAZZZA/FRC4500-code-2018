@@ -35,6 +35,7 @@ public class Robot extends IterativeRobot {
     public static NewElevator newElevator;
     public static BottomClaw bottomClaw;
     public static BackClaw backClaw;
+    
     /*DigitalInput limitTop;
     DigitalInput limitBottom;*/
     /**
@@ -55,6 +56,7 @@ public class Robot extends IterativeRobot {
         bottomClaw = new BottomClaw();
         oi = new OI();
         backClaw = new BackClaw();
+       
     }
 	
 	public void disabledPeriodic() {

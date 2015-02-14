@@ -35,6 +35,7 @@ public class RobotMap {
 	public static double timeToMoveScrew = 0.5;
 
 	public static int elevatorMotor = 4;
+	public static int backClawMotor = 5;
 
 	public static int limitTop = 2;
 
@@ -53,10 +54,11 @@ public class RobotMap {
 	public static double sonarForwardSpeed = .25, // Dummy - Speed to move the
 			// robot forward during
 			// autonomous
-			sonar1 = 14, // Dummy - Distance to vision align with the box
+			sonar1 = 20, // Dummy - Distance to vision align with the box
 			
-			//OLD STUFF:
-			sonar2 = 6, // Dummy - Distance to pickup box
+
+			sonar2 = 10, // Dummy - Distance to pickup box
+					//OLD STUFF:
 			strafeSpeed = 0.75,// Dummy - Speed to strafe into the auto zone,
 			// probably will ultimately be '1' for full
 			// speed
@@ -68,7 +70,7 @@ public class RobotMap {
 	
 	public static String imageProcessingIP = "10.45.0.100";
 
-	public static double liftTime = 1.5; //Time in seconds, Dummy Value
+	public static double liftTime = 1.7; //Time in seconds, Dummy Value
 	
-	public static double lowerTime = 2; //Time in seconds, Dummy Value
+	public static double lowerTime = 1.4; //Time in seconds, Dummy Value
 }

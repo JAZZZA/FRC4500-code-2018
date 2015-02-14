@@ -7,11 +7,11 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Lift extends Command {
+public class ExtraLift extends Command {
 
     Timer time = new Timer();
 	
-    public Lift() {
+    public ExtraLift() {
         requires(Robot.newElevator);
     	// Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -29,7 +29,7 @@ public class Lift extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return time.get() >= RobotMap.liftTime; //Returns true when lift time is less than current time
+        return time.get() >= .5; //Returns true when lift time is less than current time
     }
 
     // Called once after isFinished returns true

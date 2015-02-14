@@ -13,9 +13,12 @@ import org.usfirst.frc.team4500.robot.commands.FullForward;
 import org.usfirst.frc.team4500.robot.commands.GrabTrashCan;
 import org.usfirst.frc.team4500.robot.commands.Lift;
 import org.usfirst.frc.team4500.robot.commands.Lower;
+import org.usfirst.frc.team4500.robot.commands.LowerBackClaw;
 import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.OpenClaws;
+import org.usfirst.frc.team4500.robot.commands.RaiseBackClaw;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
+import org.usfirst.frc.team4500.robot.commands.StopBackClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 
@@ -27,6 +30,9 @@ import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 
 
 import org.usfirst.frc.team4500.robot.commands.Turn90Degrees;
+
+
+
 
 
 
@@ -58,15 +64,16 @@ public class OI {
 	Button autoLift = new JoystickButton(functionstick, 7);
 	Button autoLower = new JoystickButton(functionstick, 8);
 	Button turn90 = new JoystickButton(functionstick, 9);
-	Button openBot = new JoystickButton(functionstick, 10); //Functionstick Auto Trials
-	Button closeTopClaw = new JoystickButton(functionstick, 11);
+	Button raiseBack = new JoystickButton(functionstick, 11); //Functionstick Auto Trials
+	Button lowerBack = new JoystickButton(functionstick, 10);
+	
 	
 	Socket imageProcessingComputer;
 	InputStream imageProcessingInput;
 	OutputStream imageProcessingOutput;
 	
 	public OI() {
-		SonarTest.whenPressed(new DriveUntilSonar(14, .5));
+		SonarTest.whenPressed(new DriveUntilSonar(14, .25));
 		gyroReset.whenPressed(new ResetGyro());
 		backwardButton.whileHeld(new FullBackward());
 		forwardButton.whileHeld(new FullForward());
@@ -82,8 +89,10 @@ public class OI {
 		autoLift.whenPressed(new Lift());
 		autoLower.whenPressed(new Lower());
 		turn90.whenPressed(new Turn90Degrees());
-		openBot.whenPressed(new OpenBottomClaw()); //Functionstick Auto Trials
-		closeTopClaw.whenPressed(new GrabTrashCan());
+		raiseBack.whileHeld(new RaiseBackClaw());
+		lowerBack.whileHeld(new LowerBackClaw());
+		//raiseBack.whenReleased(new StopBackClaw());
+		//lowerBack.whenReleased(new StopBackClaw());
 		
 		try {
 			imageProcessingComputer = new Socket(RobotMap.imageProcessingIP, 1234);

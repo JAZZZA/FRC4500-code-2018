@@ -8,8 +8,6 @@ package org.usfirst.frc.team4500.robot;
  */
 public class RobotMap {
 
-	public boolean mattDaemonFixed = false;
-	
 	// Motor Ports
 	public static double motorPower = .75;
 
@@ -36,7 +34,7 @@ public class RobotMap {
 
 	public static double timeToMoveScrew = 0.5;
 
-	public static int elevatorMotor = 6;
+	public static int elevatorMotor = 4;
 
 	public static int limitTop = 2;
 
@@ -73,7 +71,4 @@ public class RobotMap {
 	public static double liftTime = 1.5; //Time in seconds, Dummy Value
 	
 	public static double lowerTime = 2; //Time in seconds, Dummy Value
-
-	public static int backClawMotor = 7;
-
 }

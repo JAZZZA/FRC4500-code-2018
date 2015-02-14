@@ -7,8 +7,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import org.usfirst.frc.team4500.robot.commands.BackClawDown;
-import org.usfirst.frc.team4500.robot.commands.BackClawUp;
 import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
@@ -29,8 +27,6 @@ import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 
 
 import org.usfirst.frc.team4500.robot.commands.Turn90Degrees;
-
-
 
 
 
@@ -64,8 +60,6 @@ public class OI {
 	Button turn90 = new JoystickButton(functionstick, 9);
 	Button openBot = new JoystickButton(functionstick, 10); //Functionstick Auto Trials
 	Button closeTopClaw = new JoystickButton(functionstick, 11);
-	Button backClawUp = new JoystickButton(drivestick, 11);
-	Button backClawDown = new JoystickButton(drivestick,12);
 	
 	Socket imageProcessingComputer;
 	InputStream imageProcessingInput;
@@ -90,8 +84,6 @@ public class OI {
 		turn90.whenPressed(new Turn90Degrees());
 		openBot.whenPressed(new OpenBottomClaw()); //Functionstick Auto Trials
 		closeTopClaw.whenPressed(new GrabTrashCan());
-		backClawUp.whileHeld(new BackClawUp());
-		backClawDown.whileHeld(new BackClawDown());
 		
 		try {
 			imageProcessingComputer = new Socket(RobotMap.imageProcessingIP, 1234);

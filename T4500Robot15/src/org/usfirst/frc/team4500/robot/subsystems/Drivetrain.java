@@ -131,7 +131,7 @@ public class Drivetrain extends Subsystem {
 		}
 
 		deviation = gy.getAngle() - correctAngle;
-		correction = -deviation / 10; // 10 is an arbitrary value, subject to
+		correction = -deviation / 8; // 10 is an arbitrary value, subject to
 										// change. This means that if the robot
 										// strayed 10 degrees off course, it
 										// would hit the maximum correction rate

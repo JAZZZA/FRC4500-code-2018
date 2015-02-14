@@ -23,6 +23,7 @@ public class FullAuto extends CommandGroup {
         //addParallel(new BufferLift());
         addSequential(new PickupTote()); //Third tote grabbed
         addSequential(new Turn90Degrees()); //Turned towards auto zone
+        addSequential(new Wait(.1));
         addSequential(new DriveUntilSonar(RobotMap.sonar1, RobotMap.sonarForwardSpeed)); //Drive to auto zone CHANGE FOR COMPETITION!!!!!!!!!!!!! <<<<<<<!!!!<<<<!!!!<<<!
     }
 }

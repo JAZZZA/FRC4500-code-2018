@@ -137,15 +137,29 @@ public class Drivetrain extends Subsystem {
 										// would hit the maximum correction rate
 										// of z = 1.
 		roboDrive.mecanumDrive_Cartesian(0, speed, correction, 0);
-
-		// Fallback code if the ratio stuff doesn't work out:
-		/*
-		 * if (gy.getAngle() > correctAngle + 1) {
-		 * RoboDrive.mecanumDrive_Cartesian(0, speed, -.3, 0); } else if
-		 * (gy.getAngle() < correctAngle - 1) {
-		 * RoboDrive.mecanumDrive_Cartesian(0, speed, .3, 0); } else {
-		 * RoboDrive.mecanumDrive_Cartesian(0, speed, 0, 0); }
-		 */
+	}
+	
+	/**
+	 * Overload method which allows an angle to drive at to be specified
+	 * @param speed
+	 * @param gy
+	 * @param roboDrive
+	 * @param atAngle: Angle to be driven at.
+	 */
+	public void driveStraight(double speed, Gyro gy, RobotDrive roboDrive, double atAngle) {
+		firstRun = false;
+		correctAngle = atAngle;
+		driveStraight(speed, gy, roboDrive);
+	}
+	
+	/**
+	 * Uses the driveStraight function to instead just turn to a gyroscopic angle
+	 * @param angle: Angle to face
+	 * @param gy: Gyro to use
+	 * @param roboDrive: RobotDrive object to use
+	 */
+	public void turnToFace(double angle, Gyro gy, RobotDrive roboDrive) {
+		driveStraight(0, gy, roboDrive, angle);
 	}
 
 	/**

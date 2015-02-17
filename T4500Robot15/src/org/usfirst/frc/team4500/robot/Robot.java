@@ -39,19 +39,20 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		
+    	drivetrain = new Drivetrain();
+		drivetrain.invertDriveMotors();
 		//limitTop = new DigitalInput(3); //Limit Top Switch  = Port 3
 		//limitBottom = new DigitalInput(1); //Limit Bottom Switch = Port 4
-		drivetrain = new Drivetrain();
-		drivetrain.invertDriveMotors();
 		pneumaticsDemo = new PneumaticsDemo();
 		topClaw = new TopClaw();
         // instantiate the command used for the autonomous period
-    	autonomousCommand = new FullAuto();
+    	//autonomousCommand = new FullAuto();
         newElevator = new NewElevator();
         bottomClaw = new BottomClaw();
         backClaw = new BackClaw();
         oi = new OI();
+        autonomousCommand = new FullAuto();
+
     }
 	
 	public void disabledPeriodic() {
@@ -59,7 +60,7 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-        // schedule the autonomous command (example)
+       //autonomousCommand = new FullAuto();
         if (autonomousCommand != null) autonomousCommand.start();
     }
 

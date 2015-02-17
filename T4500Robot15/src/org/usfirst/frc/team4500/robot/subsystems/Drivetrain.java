@@ -136,6 +136,9 @@ public class Drivetrain extends Subsystem {
 		if(correction >= 0.25) { //Speed limit
 			correction = 0.25;
 		}
+		if(correction <= -0.25) {
+			correction = -0.25;
+		}
 		roboDrive.mecanumDrive_Cartesian(0, speed, correction, 0);
 	}
 	

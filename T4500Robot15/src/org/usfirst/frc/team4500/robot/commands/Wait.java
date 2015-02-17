@@ -1,7 +1,5 @@
 package org.usfirst.frc.team4500.robot.commands;
 
-import java.sql.Time;
-
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 

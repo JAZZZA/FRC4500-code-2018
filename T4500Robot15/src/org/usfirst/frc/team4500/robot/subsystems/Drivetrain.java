@@ -1,8 +1,5 @@
 package org.usfirst.frc.team4500.robot.subsystems;
 
-import java.util.Arrays;
-
-import org.usfirst.frc.team4500.robot.Robot;
 import org.usfirst.frc.team4500.robot.RobotMap;
 import org.usfirst.frc.team4500.robot.commands.DriveWithJoystick;
 
@@ -136,6 +133,9 @@ public class Drivetrain extends Subsystem {
 										// strayed 10 degrees off course, it
 										// would hit the maximum correction rate
 										// of z = 1.
+		if(correction >= 0.25) { //Speed limit
+			correction = 0.25;
+		}
 		roboDrive.mecanumDrive_Cartesian(0, speed, correction, 0);
 	}
 	

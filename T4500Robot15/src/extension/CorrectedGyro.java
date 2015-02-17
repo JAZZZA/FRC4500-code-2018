@@ -35,12 +35,12 @@ public class CorrectedGyro extends Gyro{
 	
 	public double getAngle(){
 		
-		double time = t.get();
+		//double time = t.get();
 		return super.getAngle() * correctionFactor;// - (0.0002024 * time * time + .01813 * time);	//subtract drift
 	}
 	
 	public double getRate(){
-		double time = t.get();
+		//double time = t.get();
 		return super.getRate() * correctionFactor;// - (2 * 0002024 * time + .1813);	//subtract rate of change of drift
 	}
 

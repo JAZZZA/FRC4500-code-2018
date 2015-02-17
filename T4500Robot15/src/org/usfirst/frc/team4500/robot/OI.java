@@ -6,36 +6,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-
 import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
-import org.usfirst.frc.team4500.robot.commands.GrabTrashCan;
 import org.usfirst.frc.team4500.robot.commands.Lift;
 import org.usfirst.frc.team4500.robot.commands.Lower;
 import org.usfirst.frc.team4500.robot.commands.LowerBackClaw;
-import org.usfirst.frc.team4500.robot.commands.OpenBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.OpenClaws;
 import org.usfirst.frc.team4500.robot.commands.RaiseBackClaw;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
-import org.usfirst.frc.team4500.robot.commands.StopBackClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
-
-
-
-
-
-
-
-
 import org.usfirst.frc.team4500.robot.commands.Turn90Degrees;
-
-
-
-
-
-
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;

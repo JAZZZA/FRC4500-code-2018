@@ -20,6 +20,8 @@ public class StrafeForSeconds extends Command {
 	 *            : true = right, false = left.
 	 */
 	
+	public static final boolean RIGHT = true;
+	public static final boolean LEFT = false;
 	double seconds;
 	boolean dir;
 	double mySpeed;

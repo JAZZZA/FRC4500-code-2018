@@ -12,16 +12,18 @@ public class FullAuto extends CommandGroup {
 	private double initialAngle;
 	private double angleToMaintain = initialAngle + 90;
 	private double finalAngle = angleToMaintain + 90;
+	private static final double INITIAL_LIFT = 1;
 	private static final double STRAFE = 1;
-	private static final boolean STRAFE_DIRECTION = true;
 
 	public FullAuto() {
 		initialAngle = Robot.drivetrain.getAngle();
 		addSequential(new OpenClaws()); // Safety precaution
+		addSequential(new Lift(INITIAL_LIFT)); // Lift bottom claw above level of top of tote
+		addSequential(new DriveUntilSonar(RobotMap.sonar1, RobotMap.sonarForwardSpeed, initialAngle)); // Move to trashcan
 		addSequential(new PickupTrashCan()); // Trash can picked up
 		addSequential(new TurnToFace(angleToMaintain));// Turned to face proper
 														// direction
-		addSequential(new StrafeForSeconds(STRAFE, STRAFE_DIRECTION,
+		addSequential(new StrafeForSeconds(STRAFE, StrafeForSeconds.RIGHT,
 				RobotMap.sonarForwardSpeed)); //Moved inline with boxes
 		addSequential(new DriveUntilSonar(RobotMap.sonar2,
 				RobotMap.sonarForwardSpeed, angleToMaintain)); // Moved to our
@@ -32,7 +34,7 @@ public class FullAuto extends CommandGroup {
 				RobotMap.sonarForwardSpeed, angleToMaintain)); // Moved to
 																// second tote
 		addSequential(new PickupTote()); // Second tote grabbed and lifted
-		addSequential(new ExtraLift());
+		addSequential(new Lift(.5));
 		addSequential(new DriveUntilSonar(RobotMap.sonar1,
 				RobotMap.sonarForwardSpeed, angleToMaintain)); // Moved to third
 																// tote

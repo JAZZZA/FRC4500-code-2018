@@ -1,12 +1,10 @@
 
 package org.usfirst.frc.team4500.robot;
 
-import org.usfirst.frc.team4500.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4500.robot.commands.FullAuto;
 import org.usfirst.frc.team4500.robot.subsystems.BackClaw;
 import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team4500.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team4500.robot.subsystems.NewElevator;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsDemo;
 import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
@@ -25,9 +23,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static OI oi;
 
+	public static OI oi;
     Command autonomousCommand;
     public static Drivetrain drivetrain;
     public static PneumaticsDemo pneumaticsDemo;
@@ -50,7 +47,7 @@ public class Robot extends IterativeRobot {
 		pneumaticsDemo = new PneumaticsDemo();
 		topClaw = new TopClaw();
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
+    	autonomousCommand = new FullAuto();
         newElevator = new NewElevator();
         bottomClaw = new BottomClaw();
         backClaw = new BackClaw();
@@ -63,7 +60,6 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-    	autonomousCommand = new FullAuto();
         if (autonomousCommand != null) autonomousCommand.start();
     }
 

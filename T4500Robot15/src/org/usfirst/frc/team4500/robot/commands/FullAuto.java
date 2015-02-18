@@ -10,26 +10,42 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class FullAuto extends CommandGroup {
 	private double initialAngle;
-	private double angleToMaintain = initialAngle - 90;
+	private double angleToMaintain = initialAngle - 23;
 	private double finalAngle = angleToMaintain - 90;
 	private static final double INITIAL_LIFT = .5;
-	private static final double STRAFE = 1.3;
+	private static final double INITIAL_STRAFE = .2;
+	private static final double STRAFE = .70;
+	private static final double STRAFE_SPEED = .8;
+	private static final double INITIAL_FORWARD = .7;
 
 	public FullAuto() {
 		initialAngle = Robot.drivetrain.getAngle();
+		
 		addSequential(new OpenClaws()); // Safety precaution
-		addSequential(new Lift(INITIAL_LIFT)); // Lift bottom claw above level of top of tote
-		addSequential(new DriveUntilSonar(9, .25)); // Move to trashcan
+		/*addSequential(new Lift(INITIAL_LIFT)); // Lift bottom claw above level
+												// of top of tote
+		addSequential(new DriveUntilSonar(10, .25)); // Move to trashcan
 		addSequential(new Wait(.5));
-		addSequential(new GrabTote()); 
+		addSequential(new GrabTote());
 		addSequential(new PickupTrashCan()); // Trash can picked up
-		addSequential(new TurnToFace(angleToMaintain));// Turned to face proper
-														// direction
-		addSequential(new StrafeForSeconds(STRAFE, StrafeForSeconds.RIGHT,
-				RobotMap.sonarForwardSpeed)); //Moved inline with boxes
-		addSequential(new DriveUntilSonar(9,
-				.25, angleToMaintain)); // Moved to our
-																// (first) tote
+		addSequential(new StrafeForSeconds(INITIAL_STRAFE,
+				StrafeForSeconds.RIGHT, STRAFE));
+		addSequential(new Wait(.5));
+		addSequential(new DriveForSeconds(RobotMap.sonarForwardSpeed, INITIAL_FORWARD));
+		addSequential(new TurnToFace(angleToMaintain));// Turned to face
+															// proper
+		// direction
+		//addSequential(new Wait(.7));
+		//addSequential(new StrafeForSeconds(STRAFE, StrafeForSeconds.RIGHT,
+				//STRAFE_SPEED)); // Moved inline with boxes
+		addSequential(new DriveUntilSonar(9, .25, angleToMaintain)); */
+		// Moved to
+																		// our
+																		// (first)
+																		// tote
+		addSequential(new PickupTrashCan());
+		addSequential(new DriveUntilSonar(15, RobotMap.sonarForwardSpeed));
+		addSequential(new TurnToFace(-15));
 		addSequential(new PickupTote()); // First tote grabbed and lifted
 		addSequential(new Wait(.4));
 		addSequential(new DriveUntilSonar(RobotMap.sonar1,

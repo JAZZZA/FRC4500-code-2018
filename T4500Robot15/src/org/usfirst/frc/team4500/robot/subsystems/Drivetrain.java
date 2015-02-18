@@ -128,16 +128,17 @@ public class Drivetrain extends Subsystem {
 		}
 
 		deviation = gy.getAngle() - correctAngle;
-		correction = -deviation / 8; // 10 is an arbitrary value, subject to
+		correction = -deviation / 20; // 10 is an arbitrary value, subject to
 										// change. This means that if the robot
 										// strayed 10 degrees off course, it
 										// would hit the maximum correction rate
 										// of z = 1.
-		if(correction >= 0.25) { //Speed limit
-			correction = 0.25;
+		final double SPEEDLIMIT = .35;
+		if(correction >= SPEEDLIMIT	) { //Speed limit
+			correction = SPEEDLIMIT;
 		}
-		if(correction <= -0.25) {
-			correction = -0.25;
+		if(correction <= -SPEEDLIMIT) {
+			correction = -SPEEDLIMIT;
 		}
 		roboDrive.mecanumDrive_Cartesian(0, speed, correction, 0);
 	}

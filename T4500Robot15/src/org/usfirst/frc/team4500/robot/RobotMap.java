@@ -70,7 +70,7 @@ public class RobotMap {
 	
 	public static String imageProcessingIP = "10.45.0.100";
 
-	public static double liftTime = 2; //Time in seconds
+	public static double liftTime = 1.8; //Time in seconds
 	
-	public static double lowerTime = 2.3; //Time in seconds
+	public static double lowerTime = 1.5; //Time in seconds
 }

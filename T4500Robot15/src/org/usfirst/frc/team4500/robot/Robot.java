@@ -61,6 +61,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
        //autonomousCommand = new FullAuto();
+    	drivetrain.resetGyro();
         if (autonomousCommand != null) autonomousCommand.start();
     }
 

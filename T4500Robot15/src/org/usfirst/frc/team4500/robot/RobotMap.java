@@ -62,7 +62,9 @@ public class RobotMap {
 			strafeSpeed = 0.75,// Dummy - Speed to strafe into the auto zone,
 			// probably will ultimately be '1' for full
 			// speed
-			strafeTime = 5; // Dummy - Time to strafe left into the auto zone
+			strafeTime = 5, // Dummy - Time to strafe left into the auto zone
+			
+			BackClawLowerTime=1;
 	
 	public static double autoTurnSpeed = 0.5;// Dummy
 

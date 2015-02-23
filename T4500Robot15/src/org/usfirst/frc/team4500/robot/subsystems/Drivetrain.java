@@ -74,6 +74,12 @@ public class Drivetrain extends Subsystem {
 		return 1.04 * gyroscope.getAngle();
 	}
 
+	/**
+	 * Drive the robot using x, y, and rotation values
+	 * @param x
+	 * @param y
+	 * @param rotation
+	 */
 	public void driveWithJoystick(double x, double y, double rotation) {
 		SmartDashboard.putNumber("Gyro Angle", getAngle());
 		SmartDashboard.putNumber("Ultrasonic distance", getSonarInches());
@@ -89,6 +95,9 @@ public class Drivetrain extends Subsystem {
 		drive.mecanumDrive_Cartesian(0, -speed, 0, 0);
 	}
 
+	/**
+	 * Stops the robot from driving
+	 */
 	public void stop() {
 		drive.mecanumDrive_Cartesian(0, 0, 0, 0);
 	}

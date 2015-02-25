@@ -54,7 +54,7 @@ public class RobotMap {
 	public static double sonarForwardSpeed = .4, // Dummy - Speed to move the
 			// robot forward during
 			// autonomous
-			sonar1 = 20, // Dummy - Distance to vision align with the box
+			sonar1 = sonarForwardSpeed * 50, // Dummy - Distance to vision align with the box. Will go up proportionally to the speed the robot is set to move at.
 			
 
 			sonar2 = 10, // Dummy - Distance to pickup box

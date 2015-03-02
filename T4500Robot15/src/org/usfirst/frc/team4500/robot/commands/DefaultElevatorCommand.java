@@ -20,6 +20,12 @@ public class DefaultElevatorCommand extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
+    
+    /**
+     * Runs at full speed of the liftButton's value == true.
+     * Runs at half speed in reverse if lowerButton's value == false.
+     * Holds at 10% power otherwise, to hold the carriage in place.
+     */
     protected void execute() {
     	if (Robot.oi.liftButton.get()) {
     		Robot.newElevator.winchmotor.set(1);

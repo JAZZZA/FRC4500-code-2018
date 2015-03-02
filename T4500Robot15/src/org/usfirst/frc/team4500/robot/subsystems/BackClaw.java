@@ -19,14 +19,17 @@ public class BackClaw extends Subsystem {
         setDefaultCommand(new StopBackClaw());
     }
     
+    //Default set to .75
     public void raise() {
     	backClaw.set(.75);	
     }
     
+    //Default set to -.4
     public void lower() {
     	backClaw.set(-.4);
     }
     
+    //Default set to .1
     public void stop() {
     	backClaw.set(.1);
     }

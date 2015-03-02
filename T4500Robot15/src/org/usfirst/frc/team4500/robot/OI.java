@@ -30,8 +30,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	Joystick drivestick = new Joystick(0);
-	Joystick functionstick = new Joystick(1);
+	Joystick drivestick = new Joystick(0);	//Drivestick / Rob's Stick
+	Joystick functionstick = new Joystick(1); //Functionstick / Cindy's Stick
 	Trigger mainTrigger = new JoystickButton(functionstick, 1); 
 	Button backwardButton = new JoystickButton(drivestick, 8);
 	Button forwardButton = new JoystickButton(drivestick, 7);

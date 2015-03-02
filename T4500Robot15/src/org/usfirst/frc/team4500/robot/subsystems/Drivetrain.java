@@ -66,6 +66,9 @@ public class Drivetrain extends Subsystem {
 		return sonar.getAverageVoltage() / 0.009766;
 	}
 
+	/**
+	 * Resets the gyroscope reading
+	 */
 	public void resetGyro() {
 		gyroscope.reset();
 	}
@@ -75,11 +78,13 @@ public class Drivetrain extends Subsystem {
 	}
 
 	/**
-	 * Drive the robot using x, y, and rotation values
-	 * @param x
-	 * @param y
-	 * @param rotation
+	 * Drive the robot using x, y, and rotation values. 
+	 * Takes: 
+	 * @param double x
+	 * @param double y
+	 * @param double rotation
 	 */
+	
 	public void driveWithJoystick(double x, double y, double rotation) {
 		SmartDashboard.putNumber("Gyro Angle", getAngle());
 		SmartDashboard.putNumber("Ultrasonic distance", getSonarInches());

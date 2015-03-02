@@ -20,21 +20,26 @@ public class RobotMap {
 	public static double breakSpeed = 0.1; // How much to move the motor to keep
 											// the elevator from moving down for
 											// now
-	public static double goDownResistance = 0;
-
+	/*
+	 * public static double goDownResistance = 0;
+	 */
 	public static double joyDead = .15;
 
-	public static int screwdriveMotor = 5;
-
-	public static int screwDriveEncoder1 = 0;
-
-	public static int screwDriveEncoder2 = 1;
-
-	public static double screwSpeed = 0.5;
-
-	public static double timeToMoveScrew = 0.5;
+	/*
+	 * public static int screwdriveMotor = 5;
+	 * 
+	 * 
+	 * public static int screwDriveEncoder1 = 0;
+	 * 
+	 * public static int screwDriveEncoder2 = 1;
+	 * 
+	 * public static double screwSpeed = 0.5;
+	 * 
+	 * public static double timeToMoveScrew = 0.5;
+	 */
 
 	public static int elevatorMotor = 4;
+	
 	public static int backClawMotor = 5;
 
 	public static int limitTop = 2;

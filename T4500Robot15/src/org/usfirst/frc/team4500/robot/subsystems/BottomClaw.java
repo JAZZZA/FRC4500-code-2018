@@ -20,6 +20,9 @@ public class BottomClaw extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    /**
+     * Toggles the Bottom Claw
+     */
     public void toggleClaw() {
     	if (actuator.get().equals(DoubleSolenoid.Value.kForward)) {
     		actuator.set(DoubleSolenoid.Value.kReverse);

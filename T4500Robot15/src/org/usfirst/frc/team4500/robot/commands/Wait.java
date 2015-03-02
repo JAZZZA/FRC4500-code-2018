@@ -11,6 +11,9 @@ public class Wait extends Command {
 	double waitTime;
 	
 
+	/** Causes the robot to wait for a certain amount of time, waitTime.
+	 * @param double waitTime
+	 */
     public Wait(double waitTime) {
     	this.waitTime = waitTime;
         // Use requires() here to declare subsystem dependencies

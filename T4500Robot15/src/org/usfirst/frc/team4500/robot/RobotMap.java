@@ -14,7 +14,7 @@ public class RobotMap {
 	public static int flmotorPort = 0, frmotorPort = 1, blmotorPort = 2,
 			brmotorPort = 3;
 
-	public static final int bottomCl1 = 2, bottomCl2 = 3;
+	public static final int bottomCl1 = 2, bottomCl2 = 3, backCl1 = 4, backCl2 = 5;
 
 	// Joystick deadzone values
 	public static double breakSpeed = 0.1; // How much to move the motor to keep

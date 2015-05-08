@@ -6,18 +6,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+
 import org.usfirst.frc.team4500.robot.commands.DriveUntilSonar;
 import org.usfirst.frc.team4500.robot.commands.FullBackward;
 import org.usfirst.frc.team4500.robot.commands.FullForward;
 import org.usfirst.frc.team4500.robot.commands.Lift;
 import org.usfirst.frc.team4500.robot.commands.Lower;
 import org.usfirst.frc.team4500.robot.commands.LowerBackClaw;
+import org.usfirst.frc.team4500.robot.commands.LowerNewBackClaw;
 import org.usfirst.frc.team4500.robot.commands.OpenClaws;
 import org.usfirst.frc.team4500.robot.commands.RaiseBackClaw;
+import org.usfirst.frc.team4500.robot.commands.RaiseNewBackClaw;
 import org.usfirst.frc.team4500.robot.commands.ResetGyro;
 import org.usfirst.frc.team4500.robot.commands.ToggleBottomClaw;
 import org.usfirst.frc.team4500.robot.commands.ToggleTopClaw;
 import org.usfirst.frc.team4500.robot.commands.Turn90Degrees;
+
+
 //import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -42,12 +47,14 @@ public class OI {
 	Button gyroReset = new JoystickButton(drivestick, 3);
 	Button SonarTest = new JoystickButton(drivestick, 9);
 	Button topClaw = new JoystickButton(functionstick, 4);
-	Button openClaws = new JoystickButton(functionstick,6); //Functionstick Auto Trials
-	Button autoLift = new JoystickButton(functionstick, 7);
-	Button autoLower = new JoystickButton(functionstick, 8);
+	//Button openClaws = new JoystickButton(functionstick,6); //Functionstick Auto Trials
+	//Button autoLift = new JoystickButton(functionstick, 7);
+	//Button autoLower = new JoystickButton(functionstick, 8);
 	Button turn90 = new JoystickButton(functionstick, 9);
 	Button raiseBack = new JoystickButton(functionstick, 11); //Functionstick Auto Trials
 	Button lowerBack = new JoystickButton(functionstick, 10);
+	Button lowerNewBack = new JoystickButton(functionstick, 6);
+	Button raiseNewBack = new JoystickButton(functionstick, 7);
 	
 	
 	Socket imageProcessingComputer;
@@ -67,14 +74,17 @@ public class OI {
 		//encoderReset.whenPressed(new ResetShaftEncoder());
 		//pidSetOpen.whenPressed(new OpenBottomClaw());
 		//pidSetClosed.whenPressed(new CloseBottomClaw());
-		openClaws.whenPressed(new OpenClaws()); //Functionstick Auto Trials
-		autoLift.whenPressed(new Lift());
-		autoLower.whenPressed(new Lower());
+		//openClaws.whenPressed(new OpenClaws()); //Functionstick Auto Trials
+		//autoLift.whenPressed(new Lift());
+		//autoLower.whenPressed(new Lower());
 		turn90.whenPressed(new Turn90Degrees());
 		raiseBack.whileHeld(new RaiseBackClaw());
 		lowerBack.whileHeld(new LowerBackClaw());
 		//raiseBack.whenReleased(new StopBackClaw());
 		//lowerBack.whenReleased(new StopBackClaw());
+		lowerNewBack.whenPressed(new LowerNewBackClaw());
+		raiseNewBack.whenPressed(new RaiseNewBackClaw());
+		
 		
 		try {
 			imageProcessingComputer = new Socket(RobotMap.imageProcessingIP, 1234);

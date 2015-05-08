@@ -5,6 +5,7 @@ import org.usfirst.frc.team4500.robot.commands.FullAuto;
 import org.usfirst.frc.team4500.robot.subsystems.BackClaw;
 import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team4500.robot.subsystems.NewBackClaw;
 import org.usfirst.frc.team4500.robot.subsystems.NewElevator;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsDemo;
 import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
@@ -32,6 +33,7 @@ public class Robot extends IterativeRobot {
     public static NewElevator newElevator;
     public static BottomClaw bottomClaw;
     public static BackClaw backClaw;
+    public static NewBackClaw newBackClaw;
     /*DigitalInput limitTop;
     DigitalInput limitBottom;*/
     /**
@@ -50,6 +52,7 @@ public class Robot extends IterativeRobot {
         newElevator = new NewElevator();
         bottomClaw = new BottomClaw();
         backClaw = new BackClaw();
+        newBackClaw = new NewBackClaw();
         oi = new OI();
         autonomousCommand = new FullAuto();
 

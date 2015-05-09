@@ -17,7 +17,7 @@ public class FullAuto extends CommandGroup {
 	private static final double STRAFE = .70;
 	private static final double STRAFE_SPEED = .8;
 	private static final double INITIAL_FORWARD = .7;
-	private static int AUTOMODE = 1;
+	private static int AUTOMODE = 4;
 
 	public FullAuto() {
 		initialAngle = Robot.drivetrain.getAngle();
@@ -68,12 +68,16 @@ public class FullAuto extends CommandGroup {
 
 		if (AUTOMODE == 4) {// pick up trash can from center then move to Auto
 							// zone
-			addSequential(new LowerBackClaw(RobotMap.BackClawLowerTime));
+			
 			addSequential(new DriveForSeconds(-.25, .5));
-			addSequential(new RaiseBackClaw(1.5));
-			addSequential(new DriveForSeconds(.25, 1));
-			addParallel(new LowerBackClaw(RobotMap.BackClawLowerTime));
-			addSequential(new RaiseBackClaw(2));
+			addSequential(new Wait(0.5));
+			addSequential(new LowerNewBackClaw());
+			addSequential(new Wait(1));
+			addSequential(new DriveForSeconds(.3, 2.5));
+			addSequential(new Wait(5));
+			addSequential(new RaiseNewBackClaw());
+			
+			
 
 		}
 		if (AUTOMODE == 5) {

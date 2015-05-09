@@ -74,7 +74,8 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public double getAngle() {
-		return 1.04 * gyroscope.getAngle();
+		return 0;
+		//return 1.04 * gyroscope.getAngle();
 	}
 
 	/**

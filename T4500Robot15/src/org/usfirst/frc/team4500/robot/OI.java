@@ -53,8 +53,8 @@ public class OI {
 	Button turn90 = new JoystickButton(functionstick, 9);
 	Button raiseBack = new JoystickButton(functionstick, 11); //Functionstick Auto Trials
 	Button lowerBack = new JoystickButton(functionstick, 10);
-	Button lowerNewBack = new JoystickButton(functionstick, 6);
-	Button raiseNewBack = new JoystickButton(functionstick, 7);
+	Button lowerNewBack = new JoystickButton(drivestick, 12);
+	Button raiseNewBack = new JoystickButton(drivestick, 11);
 	
 	
 	Socket imageProcessingComputer;

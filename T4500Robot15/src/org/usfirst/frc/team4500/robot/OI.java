@@ -25,6 +25,7 @@ public class OI {
 	Joystick drivestick = new Joystick(1);
 	Trigger mainTrigger = new JoystickButton(drivestick, 1);
 	Button pickUpBox = new JoystickButton(drivestick, 9);
+	public Joystick secondStick = new Joystick(2);
 	
 	public OI() {
 		pickUpBox.whenPressed(new PickupObject());
@@ -45,7 +46,7 @@ public class OI {
 	public double getTwist() {
 		double x = Math.abs(drivestick.getTwist()) > RobotMap.joyDead ? drivestick.getTwist() : 0;
 		return RobotMap.motorPower*x;
-	}
+	}  
 	
 	public boolean getTrigger() {
 		return drivestick.getRawButton(1);

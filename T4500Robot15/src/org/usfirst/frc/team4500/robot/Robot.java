@@ -8,9 +8,11 @@ import org.usfirst.frc.team4500.robot.subsystems.BottomClaw;
 import org.usfirst.frc.team4500.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team4500.robot.subsystems.Elevator;
 import org.usfirst.frc.team4500.robot.subsystems.PneumaticsMain;
+import org.usfirst.frc.team4500.robot.subsystems.RandomMotor;
 import org.usfirst.frc.team4500.robot.subsystems.TopClaw;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -34,6 +36,8 @@ public class Robot extends IterativeRobot {
     public static BottomClaw bottomClaw;
     public static Elevator elevator;
     public static Arduino arduino;
+    public static RandomMotor moveMotor;
+
 
     /**
      * This function is run when the robot is first started up and should be
@@ -50,6 +54,8 @@ public class Robot extends IterativeRobot {
 		elevator = new Elevator();
 		drivetrain.intializeSonar();
 		arduino = new Arduino();
+		moveMotor = new RandomMotor();
+		
 		
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();

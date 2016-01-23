@@ -11,10 +11,10 @@ public class RobotMap {
 
 	// Motor Ports
 	public static int flmotorPort = 0, frmotorPort = 1, blmotorPort = 2,
-			brmotorPort = 3, elevatorMotor = 4, screwdriveMotor = 5;
+			brmotorPort = 3, elevatorMotor = 4, screwdriveMotor = 5, arroundMotor = 6;
 
 	// Analog ports
-	public static int gyroPort = 0, sonarPort1 = 1, sonarPort2 = 2;
+	public static int gyroPort = 0, sonarPort1 = 1, sonarPort2 = 2, encoderPort = 4;
 
 	public static int arduinoOutput = 0;
 

@@ -32,7 +32,6 @@ public class Drivetrain extends Subsystem {
 		gyroscope.reset();
 	}
 
-	
 	public void resetGyro() {
 
 		gyroscope.reset();
@@ -85,19 +84,23 @@ public class Drivetrain extends Subsystem {
 
 	/**
 	 * Drives robot forward at a specified speed
-	 * @param speed (0 to 1)
+	 * 
+	 * @param speed
+	 *            (0 to 1)
 	 */
 	public void driveForward(double speed) {
 		drive.mecanumDrive_Cartesian(0, speed, 0, 0);
 	}
-	
-	public void intializeSonar(){
+
+	public void intializeSonar() {
 		sonar.setAutomaticMode(true);
-		sonar.setEnabled(true);	
+		sonar.setEnabled(true);
 	}
+
 	/**
 	 * 
-	 * @param range (in inches)
+	 * @param range
+	 *            (in inches)
 	 * @return
 	 */
 	public boolean isInRange(double range) {

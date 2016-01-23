@@ -26,7 +26,8 @@ public class DriveForSeconds extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.driveStraight(-speed, Robot.drivetrain.gyroscope, Robot.drivetrain.drive);
+    	//Robot.drivetrain.driveStraight(-speed, Robot.drivetrain.gyroscope, Robot.drivetrain.drive);
+    	Robot.drivetrain.driveForward(-speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

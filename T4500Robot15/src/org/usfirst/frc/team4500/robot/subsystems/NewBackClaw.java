@@ -13,11 +13,11 @@ public class NewBackClaw extends Subsystem {
 	static DoubleSolenoid backSol = new DoubleSolenoid(RobotMap.backCl1, RobotMap.backCl2);
 	
 	public static void raise() {
-		backSol.set(DoubleSolenoid.Value.kForward);
+		backSol.set(DoubleSolenoid.Value.kReverse);
 	}
 	
 	public static void lower() {
-		backSol.set(DoubleSolenoid.Value.kReverse);
+		backSol.set(DoubleSolenoid.Value.kForward);
 	}
     
     // Put methods for controlling this subsystem

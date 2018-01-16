@@ -26,4 +26,11 @@ public class RobotMap {
 	public static final int CLIMBER_LIFT_PORT = 0;
 	public static final int CLIMBER_PORT = 0;
 	public static final double CLIMBER_CLIMBING_SPEED = 0.0;
+	
+		public static final int leftIntake1 = 1;
+	public static final int rightIntake1 = 1;
+	public static final int rightIntake2 = 1;
+	public static final int leftIntake2 = 1;
+	public static final int leftPistonIntake = 1;
+	public static final int rightPistonIntake = 1;
 }

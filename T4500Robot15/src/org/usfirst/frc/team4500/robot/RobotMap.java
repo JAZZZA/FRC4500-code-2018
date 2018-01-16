@@ -22,4 +22,8 @@ public class RobotMap {
 	public static final double SHOOTER_SPINUP_SPEED = 0;
 	public static final double FEEDER_SPINUP_SPEED = 0;
 	public static final int SHOOTER_ANGLE_PISTON_PORT = 0;
+	
+	public static final int CLIMBER_LIFT_PORT = 0;
+	public static final int CLIMBER_PORT = 0;
+	public static final double CLIMBER_CLIMBING_SPEED = 0.0;
 }

@@ -35,6 +35,9 @@ public class Climber extends Subsystem {
 	public void StopClimb(){
 		climberMotor.set(0.0);
 	}
+	public void Climb(double speed){
+		climberMotor.set(speed);	
+	}
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());

@@ -31,17 +31,20 @@ public class Shooter extends Subsystem {
     public void ShooterDown(){
     	shooterAngle.set(false);
     }
-    public void Spinup(){
-    	forwardLeft.set(RobotMap.SHOOTER_SPINUP_SPEED);
-    	forwardRight.set(-RobotMap.SHOOTER_SPINUP_SPEED);
+	public void SetShooterAngle(boolean mode){
+		shooterAngle.set(mode);	
+	}
+    public void Spinup(double speed){
+    	forwardLeft.set(speed);
+    	forwardRight.set(-speed);
     }
     public void StopSpinup(){
     	forwardLeft.set(0.0);
     	forwardRight.set(0.0);
     }
-    public void FeedBlock(){
-    	backLeft.set(RobotMap.FEEDER_SPINUP_SPEED);
-    	backRight.set(-RobotMap.FEEDER_SPINUP_SPEED);
+    public void FeedBlock(double speed){
+    	backLeft.set(speed);
+    	backRight.set(-speed);
     }
     public void StopFeed(){
     	backLeft.set(0.0);
